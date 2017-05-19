@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Scene/AR-Wawasan.unity
+  isLoaded: 1
+  isActive: 1
