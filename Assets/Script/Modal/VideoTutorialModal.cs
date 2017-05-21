@@ -20,4 +20,5 @@ public class VideoTutorialModal : BaseModal
         }
         return _Instance;
     }
+
 }

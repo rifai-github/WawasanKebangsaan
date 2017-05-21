@@ -12,19 +12,20 @@ public class VideoTutorialState : FSMState
 
     public override void OnEnter()
     {
-        WKStaticFunction.WKMessageLog("Enter ARState");
+        WKStaticFunction.WKMessageLog("Enter VideoState");
         VideoTutorialModal videoModal = VideoTutorialModal.Instance();
         videoModal.OpenModal();
+
 
         base.OnEnter();
     }
 
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             AppRuntime appRuntime = _FSMCaller as AppRuntime;
-            appRuntime.SetTransition(TRANSITION.TRANSITION_TO_HOMESTATE);
+            appRuntime.SetTransition(TRANSITION.TRANSITION_TO_ARSTATE);
         }
         base.Update();
     }

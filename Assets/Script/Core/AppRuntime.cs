@@ -5,9 +5,12 @@ using WawasanKebangsaanBase;
 
 public class AppRuntime : MonoBehaviour
 {
-    public GameObject _MatineeGameObject;
-
     protected FSMSystem _FSM;
+
+    void Awake()
+    {
+        WKSigleton singleton = WKSigleton.LoadSigleton();
+    }
 
     // Update is called once per frame  
     void Update()

@@ -22,7 +22,9 @@ public class ARState : FSMState
 
     public void On3DAction()
     {
-        WKStaticFunction.WKMessageLog("Close3D");        
+        WKStaticFunction.WKMessageLog("Close3D");
+        ARModal arModal = ARModal.Instance();
+        arModal.OnClose3D();
     }
 
     public void PlayVideoAction()
@@ -35,14 +37,14 @@ public class ARState : FSMState
 
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             AppRuntime appRuntime = _FSMCaller as AppRuntime;
             appRuntime.SetTransition(TRANSITION.TRANSITION_TO_HOMESTATE);
         }
 
         ARModal arModal = ARModal.Instance();
-        arModal.TrackingObject();
+        arModal.FoundObject();
 
         base.Update();
     }

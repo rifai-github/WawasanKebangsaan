@@ -19,26 +19,4 @@ public class WKStaticFunction
     {
         Debug.LogError("Wawasan Kebangsaan LogError :: " + message);
     }
-
-    public static string GetTrackingName(ETrackingName TrackName)
-    {
-        string trackingName = "";
-
-        switch (TrackName)
-        {
-            case ETrackingName.TRACKING_PANCASILA:
-                trackingName = "Pancasila";
-                break;
-            case ETrackingName.TRACKING_NKRI:
-                trackingName = "Negara Kesatuan Republik Indonesia";
-                break;
-            case ETrackingName.TRANKING_UUD45:
-                trackingName = "Undang - Undang Dasar 1945";
-                break;
-            case ETrackingName.TRACKING_BHENIKA:
-                trackingName = "Bhineka Tunggal Ika";
-                break;
-        }
-        return trackingName;
-    }
 }

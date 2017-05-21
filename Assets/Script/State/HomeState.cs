@@ -13,7 +13,7 @@ public class HomeState : FSMState
 
     public override void OnEnter()
     {
-        WKStaticFunction.WKMessageLog("Enter ARState");
+        WKStaticFunction.WKMessageLog("Enter HomeState");
         HomeModal homeModal = HomeModal.Instance();
         homeModal.OpenModal();
         homeModal.OnRegisterModal(StartAction);
@@ -31,7 +31,7 @@ public class HomeState : FSMState
 
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             Application.Quit();
         }

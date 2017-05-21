@@ -10,11 +10,18 @@ using UnityEngine.EventSystems;
 
 public class WKSigleton : MonoBehaviour
 {
-    private EMatineeType _MatineeType;
-    public EMatineeType MatineeType { get { return _MatineeType; } set { _MatineeType = value; } }
-
     public static WKSigleton Instance { get; private set; }
-    
+
+    public static WKSigleton LoadSigleton()
+    {
+        GameObject go = new GameObject("SystemSigleton");
+        go.AddComponent<WKSigleton>();
+
+        WKSigleton sigleton = go.GetComponent<WKSigleton>() as WKSigleton;
+
+        return sigleton;
+    }
+
     void Awake()
     {
         if (Instance == null)

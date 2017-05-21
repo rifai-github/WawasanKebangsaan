@@ -12,7 +12,7 @@ public class ARModal : BaseModal
     [SerializeField]
     private Button _Close3D;
     [SerializeField]
-    private GameObject _Model3DVideo;
+    private GameObject[] _Model3DVideo;
     [SerializeField]
     private GameObject[] _MarkerAR;
     [SerializeField]
@@ -22,6 +22,7 @@ public class ARModal : BaseModal
 
     private string _NameObjectFound;
     private float _Speed = 8;
+    private bool _bFirstLoad;
 
     public string GetNameObjectFound { get { return _NameObjectFound; } }
 
@@ -41,28 +42,47 @@ public class ARModal : BaseModal
         return _Instance;
     }
 
-    public void TrackingObject()
+    public override void OpenModal()
     {
-        int _iMarker = 0;
+        _bFirstLoad = true;
+        base.OpenModal();
+    }
 
-        if (_MarkerAR[_iMarker].activeSelf)
+    public void OnClose3D()
+    {
+        for (int i = 0; i < _Model3DVideo.Length; i++)
         {
-            _Model3DVideo.SetActive(true);
-            _NameObjectFound = _MarkerAR[_iMarker].name;
-            _Model3DVideo.transform.position = Vector3.Lerp(_Model3DVideo.transform.position, _OnTrackObject[_iMarker].position, _Speed * Time.deltaTime);
-            _Model3DVideo.transform.rotation = Quaternion.Lerp(_Model3DVideo.transform.rotation, _OnTrackObject[_iMarker].rotation, _Speed * Time.deltaTime);
-            _iMarker += 1;
+            _Model3DVideo[i].SetActive(false);
         }
-        //else if (_MarkerAR[_iMarker].activeSelf)
-        //{
-        //    _VideoModel3D.transform.position = Vector3.Lerp(_VideoModel3D.transform.position, _OnTrackObject[1].position, _Speed * Time.deltaTime);
-        //    _VideoModel3D.transform.rotation = Quaternion.Lerp(_VideoModel3D.transform.rotation, _OnTrackObject[1].rotation, _Speed * Time.deltaTime);
-        //    _iMarker += 1;
-        //}
-        else
+    }
+
+    public void FoundObject()
+    {
+        for (int i = 0; i < _MarkerAR.Length; i++)
         {
-            _Model3DVideo.transform.position = Vector3.Lerp(_Model3DVideo.transform.position, _OnLostTrackObject.position, _Speed * Time.deltaTime);
-            _Model3DVideo.transform.rotation = Quaternion.Lerp(_Model3DVideo.transform.rotation, _OnLostTrackObject.rotation, _Speed * Time.deltaTime);
+            if (_MarkerAR[i].activeSelf)
+            {
+                
+                if (_bFirstLoad)
+                {
+                    _Model3DVideo[i].SetActive(false);
+                    _Close3D.gameObject.SetActive(false); // nanti di hide pake scale anim aja
+                    _bFirstLoad = false;
+                }
+                else
+                {
+                    _Model3DVideo[i].SetActive(true);
+                    _Close3D.gameObject.SetActive(true);
+                }
+                _NameObjectFound = _MarkerAR[i].name;
+                _Model3DVideo[i].transform.position = Vector3.Lerp(_Model3DVideo[i].transform.position, _OnTrackObject[i].position, _Speed * Time.deltaTime);
+                _Model3DVideo[i].transform.rotation = Quaternion.Lerp(_Model3DVideo[i].transform.rotation, _OnTrackObject[i].rotation, _Speed * Time.deltaTime);
+            }
+            else
+            {
+                _Model3DVideo[i].transform.position = Vector3.Lerp(_Model3DVideo[i].transform.position, _OnLostTrackObject.position, _Speed * Time.deltaTime);
+                _Model3DVideo[i].transform.rotation = Quaternion.Lerp(_Model3DVideo[i].transform.rotation, _OnLostTrackObject.rotation, _Speed * Time.deltaTime);
+            }
         }
     }
 
