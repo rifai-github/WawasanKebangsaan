@@ -100,6 +100,7 @@ public class ARModal : BaseModal
             {
                 //_Close3D.gameObject.GetComponent<Animator>().SetTrigger("Enter3D");
 
+
                 if (_Model3DVideo[i].activeSelf)
                     _Close3D.gameObject.SetActive(true);
                 else
