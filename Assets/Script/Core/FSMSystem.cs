@@ -9,31 +9,31 @@ public abstract class FSMState
 {
     protected MonoBehaviour _FSMCaller;
     protected Dictionary<TRANSITION, STATE_ID> _Map = new Dictionary<TRANSITION, STATE_ID>();
-    protected STATE_ID _STATE_ID;
+    protected STATE_ID StateID;
     public STATE_ID _PreviousState;
-    public STATE_ID ID { get { return _STATE_ID; } }
+    public STATE_ID ID { get { return StateID; } }
     public STATE_ID PreviousSTATE_ID { get { return _PreviousState; } }
     
-    public void AddTRANSITION(TRANSITION TRANSITION, STATE_ID STATE_ID)
+    public void AddTransition(TRANSITION Transition, STATE_ID StateID)
     {
-        if (TRANSITION == TRANSITION.NullTransition)
+        if (Transition == TRANSITION.NullTransition)
         {
             WKStaticFunction.WKMessageError("The Transition is error");
             return;
         }
 
-        if (STATE_ID == STATE_ID.NullStateID)
+        if (StateID == STATE_ID.NullStateID)
         {
             WKStaticFunction.WKMessageError("The State is error");
             return;
         }
 
-        if (_Map.ContainsKey(TRANSITION))
+        if (_Map.ContainsKey(Transition))
         {
             WKStaticFunction.WKMessageError("The FSM already have this transition for state");
             return;
         }
-        _Map.Add(TRANSITION, STATE_ID);
+        _Map.Add(Transition, StateID);
     }
 
     public void DeleteTransition(TRANSITION transition)

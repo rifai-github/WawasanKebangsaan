@@ -7,7 +7,7 @@ public class ARState : FSMState
 {
     public ARState()
     {
-        _STATE_ID = STATE_ID.AR_STATE;
+        StateID = STATE_ID.AR_STATE;
     }
 
     public override void OnEnter()

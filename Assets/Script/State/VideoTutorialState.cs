@@ -7,7 +7,7 @@ public class VideoTutorialState : FSMState
 {
     public VideoTutorialState()
     {
-        _STATE_ID = STATE_ID.VIDEO_TUTORIAL_STATE;
+        StateID = STATE_ID.VIDEO_TUTORIAL_STATE;
     }
 
     public override void OnEnter()

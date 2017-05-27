@@ -13,14 +13,14 @@ public class ARRuntime : AppRuntime
     protected override void MakeFSM()
     {
         HomeState homeState = new HomeState();
-        homeState.AddTRANSITION(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
+        homeState.AddTransition(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
 
         ARState arState = new ARState();
-        arState.AddTRANSITION(TRANSITION.TRANSITION_TO_HOMESTATE, STATE_ID.HOME_STATE);
-        arState.AddTRANSITION(TRANSITION.TRANSITION_TO_VIDEOTUTORIALSTATE, STATE_ID.VIDEO_TUTORIAL_STATE);
+        arState.AddTransition(TRANSITION.TRANSITION_TO_HOMESTATE, STATE_ID.HOME_STATE);
+        arState.AddTransition(TRANSITION.TRANSITION_TO_VIDEOTUTORIALSTATE, STATE_ID.VIDEO_TUTORIAL_STATE);
 
         VideoTutorialState videoState = new VideoTutorialState();
-        videoState.AddTRANSITION(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
+        videoState.AddTransition(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
 
         _FSM = new FSMSystem(this);
         _FSM.AddState(homeState);

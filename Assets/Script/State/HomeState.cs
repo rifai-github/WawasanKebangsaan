@@ -8,7 +8,7 @@ public class HomeState : FSMState
 
     public HomeState()
     {
-        _STATE_ID = STATE_ID.HOME_STATE;
+        StateID = STATE_ID.HOME_STATE;
     }
 
     public override void OnEnter()

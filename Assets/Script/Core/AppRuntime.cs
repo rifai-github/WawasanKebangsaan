@@ -17,7 +17,7 @@ public class AppRuntime : MonoBehaviour
     {
         if (_FSM != null)
         {
-            _FSM.GetCurrentState.Update();
+            _FSM.GetCurrentState.Update(); //call update in FSMState
         }
     }
 
