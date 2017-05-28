@@ -88,6 +88,8 @@
      <Compile Include="Assets\Script\State\ARState.cs" />
      <Compile Include="Assets\Script\State\HomeState.cs" />
      <Compile Include="Assets\Script\State\VideoTutorialState.cs" />
+     <Compile Include="Assets\Script\VariableGatherer\BaseVariableGatherer.cs" />
+     <Compile Include="Assets\Script\VariableGatherer\HomeAnimateVarGatherer.cs" />
      <None Include="Assets\Partikel\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Partikel\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\HelloARMultiTarget-MultiTracker\Duck\README.txt" />

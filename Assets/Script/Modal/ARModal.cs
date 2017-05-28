@@ -14,6 +14,8 @@ public class ARModal : BaseModal
     [SerializeField]
     private GameObject[] _Model3DVideo;
     [SerializeField]
+    private GameObject[] _Title3D;
+    [SerializeField]
     private GameObject[] _MarkerAR;
     [SerializeField]
     private Transform[] _OnTrackObject;
@@ -48,27 +50,17 @@ public class ARModal : BaseModal
     {
         _AugmentedReality.SetActive(true);
         _bFirstLoad = true;
+
         base.OpenModal();
     }
 
     public void OnClose3D()
     {
-        StartCoroutine(Close3DCourotine());
-    }
-
-    private IEnumerator Close3DCourotine()
-    {
         for (int i = 0; i < _Model3DVideo.Length; i++)
         {
-            //_Model3DVideo[i].GetComponent<Animator>().SetTrigger("Close3D");
-            //_Close3D.gameObject.GetComponent<Animator>().SetTrigger("Close3D");
-            //yield return new WaitForSeconds(3f);
-            yield return null;
-            _Model3DVideo[i].SetActive(false);
+            _Model3DVideo[i].GetComponent<Animator>().SetBool("Close3D", true);
         }
-        _Close3D.gameObject.SetActive(false);
-
-
+        _Close3D.gameObject.GetComponent<Animator>().SetBool("Close",true);
     }
 
     public void FoundObject()
@@ -77,34 +69,30 @@ public class ARModal : BaseModal
         {
             if (_MarkerAR[i].activeSelf) //Found
             {
-                //_Model3DVideo[i].GetComponent<Animator>().SetTrigger("Enter3D");
+                _Model3DVideo[i].GetComponent<Animator>().SetBool("Enter3D", true);
+                _Model3DVideo[i].GetComponent<Animator>().SetBool("Close3D", false);
 
-                if (_bFirstLoad)
-                {
-                    _Model3DVideo[i].SetActive(false);
-                    _Close3D.gameObject.SetActive(false); // nanti di hide pake scale anim aja
-                    _bFirstLoad = false;
-                }
-                else
-                {
-                    _Model3DVideo[i].SetActive(true);
-                    _Close3D.gameObject.SetActive(true);
-                }
+                _Close3D.gameObject.GetComponent<Animator>().SetBool("Close", true);
+                _Close3D.gameObject.GetComponent<Animator>().SetBool("Enter", false);
 
-                _Close3D.gameObject.SetActive(false);
                 _NameObjectFound = _MarkerAR[i].name;
                 _Model3DVideo[i].transform.position = Vector3.Lerp(_Model3DVideo[i].transform.position, _OnTrackObject[i].position, _Speed * Time.deltaTime);
                 _Model3DVideo[i].transform.rotation = Quaternion.Lerp(_Model3DVideo[i].transform.rotation, _OnTrackObject[i].rotation, _Speed * Time.deltaTime);
             }
             else //Lost
             {
-                //_Close3D.gameObject.GetComponent<Animator>().SetTrigger("Enter3D");
+                _Model3DVideo[i].GetComponent<Animator>().SetBool("Enter3D", false);
 
-
-                if (_Model3DVideo[i].activeSelf)
-                    _Close3D.gameObject.SetActive(true);
+                if (_Title3D[i].activeSelf)
+                {
+                    _Close3D.gameObject.GetComponent<Animator>().SetBool("Enter", true);
+                    _Close3D.gameObject.GetComponent<Animator>().SetBool("Close", false);
+                }
                 else
-                    _Close3D.gameObject.SetActive(false);
+                {
+                    _Close3D.gameObject.GetComponent<Animator>().SetBool("Close", true);
+                    _Close3D.gameObject.GetComponent<Animator>().SetBool("Enter", false);
+                }
 
                 _Model3DVideo[i].transform.position = Vector3.Lerp(_Model3DVideo[i].transform.position, _OnLostTrackObject.position, _Speed * Time.deltaTime);
                 _Model3DVideo[i].transform.rotation = Quaternion.Lerp(_Model3DVideo[i].transform.rotation, _OnLostTrackObject.rotation, _Speed * Time.deltaTime);
@@ -127,6 +115,6 @@ public class ARModal : BaseModal
     public override void CloseModal()
     {
         _AugmentedReality.SetActive(false);
-        base.CloseModal();
+         base.CloseModal();
     }
 }

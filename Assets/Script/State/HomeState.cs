@@ -24,6 +24,8 @@ public class HomeState : FSMState
     private void StartAction()
     {
         WKStaticFunction.WKMessageLog("Start on Click");
+        HomeModal homeModal = HomeModal.Instance();
+        homeModal.DestroyLangit();
 
         AppRuntime appRuntime = _FSMCaller as AppRuntime;
         appRuntime.SetTransition(TRANSITION.TRANSITION_TO_ARSTATE);
