@@ -14,9 +14,11 @@ public class HomeState : FSMState
     public override void OnEnter()
     {
         WKStaticFunction.WKMessageLog("Enter HomeState");
-        HomeModal homeModal = HomeModal.Instance();
-        homeModal.OpenModal();
-        homeModal.OnRegisterModal(StartAction);
+        CreatePlayerModal createPlayer = CreatePlayerModal.Instance();
+        createPlayer.OpenModal();
+        //HomeModal homeModal = HomeModal.Instance();
+        //homeModal.OpenModal();
+        //homeModal.OnRegisterModal(StartAction);
 
         base.OnEnter();
     }
@@ -24,8 +26,6 @@ public class HomeState : FSMState
     private void StartAction()
     {
         WKStaticFunction.WKMessageLog("Start on Click");
-        HomeModal homeModal = HomeModal.Instance();
-        homeModal.DestroyLangit();
 
         AppRuntime appRuntime = _FSMCaller as AppRuntime;
         appRuntime.SetTransition(TRANSITION.TRANSITION_TO_ARSTATE);
@@ -46,7 +46,6 @@ public class HomeState : FSMState
         WKStaticFunction.WKMessageLog("Leave ARState");
 
         HomeModal homeModal = HomeModal.Instance();
-        homeModal.UnRegisterModal();
         homeModal.CloseModal();
 
         base.OnLeave();

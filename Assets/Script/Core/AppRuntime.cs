@@ -7,11 +7,6 @@ public class AppRuntime : MonoBehaviour
 {
     protected FSMSystem _FSM;
 
-    void Awake()
-    {
-        WKSigleton singleton = WKSigleton.LoadSigleton();
-    }
-
     // Update is called once per frame  
     void Update()
     {

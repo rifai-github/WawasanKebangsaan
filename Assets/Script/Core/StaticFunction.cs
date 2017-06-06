@@ -19,4 +19,17 @@ public class WKStaticFunction
     {
         Debug.LogError("Wawasan Kebangsaan LogError :: " + message);
     }
+
+    public static string GetJSONName(EJSONType jsonType)
+    {
+        string jsonName = "";
+
+        switch (jsonType)
+        {
+            case EJSONType.JSON_PLAYERNAME:
+                jsonName = "PlayerName.json";
+                break;
+        }
+        return jsonName;
+    }
 }

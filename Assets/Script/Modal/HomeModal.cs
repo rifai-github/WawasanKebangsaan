@@ -9,8 +9,6 @@ public class HomeModal : BaseModal
 {
     [SerializeField]
     private Button _Start;
-    [SerializeField]
-    private Image _LangitBantu;
 
     private HomeAnimateVarGatherer _Animate;
 
@@ -42,18 +40,13 @@ public class HomeModal : BaseModal
 
         base.OpenModal();
     }
-
-    public void DestroyLangit()
-    {
-        Destroy(_LangitBantu);
-    }
-    
+        
     public void OnRegisterModal(UnityAction OnStartAction)
     {
         _Start.onClick.AddListener(OnStartAction);
     }
 
-    public void UnRegisterModal()
+    private void UnRegisterModal()
     {
         _Start.onClick.RemoveAllListeners();
     }
@@ -67,6 +60,7 @@ public class HomeModal : BaseModal
         }
 
         yield return new WaitForSeconds(3.8f);
+        UnRegisterModal();
         base.CloseModal();
     }
 

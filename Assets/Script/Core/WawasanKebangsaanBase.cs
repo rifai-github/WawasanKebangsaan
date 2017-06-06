@@ -6,6 +6,23 @@ using UnityEngine.Events;
 
 namespace WawasanKebangsaanBase
 {
+    public class JSONEvent : UnityEvent<string>
+    {
+
+    }
+
+    public struct CONST_VAR
+    {
+        public static string JSON_PATH = Application.persistentDataPath + "/JSONData/";
+        public static string JSON_URL = "file:///" + JSON_PATH;
+    }
+
+    public enum EJSONType
+    {
+        NullJSON = 0,
+        JSON_PLAYERNAME = 1
+    }
+
     public enum STATE_ID 
     {
         NullStateID = 0,
