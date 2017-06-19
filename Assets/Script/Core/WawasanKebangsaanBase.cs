@@ -6,9 +6,7 @@ using UnityEngine.Events;
 
 namespace WawasanKebangsaanBase
 {
-    public delegate void OnMatineeEventDelegate(EMatineeType matineeType);
-
-    public enum STATE_ID 
+    public enum StateID 
     {
         NullStateID = 0,
         MATINEE_STATE = 1,
@@ -17,7 +15,7 @@ namespace WawasanKebangsaanBase
         VIDEO_TUTORIAL_STATE = 4
     }
 
-    public enum TRANSITION
+    public enum Transition
     {
         NullTransition = 0,
         TRANSITION_TO_MATINEESTATE = 1,
@@ -26,18 +24,43 @@ namespace WawasanKebangsaanBase
         TRANSITION_TO_VIDEOTUTORIALSTATE = 4
     }
     
-    public enum ETrackingName
+    public enum Provinsi
     {
-        TRACKING_NULL = 0,
-        TRACKING_PANCASILA = 1,
-        TRACKING_NKRI = 2,
-        TRANKING_UUD45 = 3,
-        TRACKING_BHENIKA = 4
+        Null = 0,
+        JAWA_BARAT = 1,
+        JAWA_TENGAH = 2,
+        NANGGROE_ACEH_DARUSSALAM = 3,
+        BALI = 4,
+        BANTEN = 5,
+        BENGKULU = 6,
+        GORONTALO = 7,
+        DKI_JAKARTA = 8,
+        JAMBI = 9,
+        JAWA_TIMUR = 10,
+        KALIMANTAN_BARAT = 11,
+        KALIMANTAN_SELATAN = 12,
+        KALIMANTAN_TENGAH = 13,
+        KALIMANTAN_TIMUR = 14,
+        KALIMANTAN_UTARA = 15,
+        DI_YOGYAKARTA = 16,
+        BANGKA_BELITUNG = 17,
+        KEPULAUAN_RIAU = 18,
+        LAMPUNG = 19,
+        MALUKU = 20,
+        KEPULAUAN_MALUKU = 21,
+        NUSA_TENGGARA_BARAT = 22,
+        NUSA_TENGGARA_TIMUR = 23,
+        PAPUA = 24,
+        PAPUA_BARAT = 25,
+        RIAU = 26,
+        SULAWESI_BARAT = 27,
+        SULAWESI_SELATAN = 28,
+        SULAWESI_TENGAH = 29,
+        SULAWESI_UTARA = 30,
+        SUMATERA_BARAT = 31,
+        SUMATERA_SELATAN = 32,
+        SUMATERA_UTARA = 33,
+        SULAWESI_TENGGARA = 34
     }
 
-    public enum EMatineeType
-    {
-        MATINEE_NULL = 0,
-        MATINEE_ENTRANCE = 1
-    }
 }

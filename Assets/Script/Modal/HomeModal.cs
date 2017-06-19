@@ -8,7 +8,9 @@ using WawasanKebangsaanBase;
 public class HomeModal : BaseModal 
 {
     [SerializeField]
-    private Button _Start;
+    private Button _StartButton;
+    [SerializeField]
+    private Button _InfoButton;
 
     private static HomeModal _Instance;
 
@@ -28,11 +30,11 @@ public class HomeModal : BaseModal
     
     public void OnRegisterModal(UnityAction OnStartAction)
     {
-        _Start.onClick.AddListener(OnStartAction);
+        _StartButton.onClick.AddListener(OnStartAction);
     }
 
     public void UnRegisterModal()
     {
-        _Start.onClick.RemoveAllListeners();
+        _StartButton.onClick.RemoveAllListeners();
     }
 }

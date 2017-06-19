@@ -8,59 +8,59 @@ using System.Collections.Generic;
 public abstract class FSMState
 {
     protected MonoBehaviour _FSMCaller;
-    protected Dictionary<TRANSITION, STATE_ID> _Map = new Dictionary<TRANSITION, STATE_ID>();
-    protected STATE_ID _STATE_ID;
-    public STATE_ID _PreviousState;
-    public STATE_ID ID { get { return _STATE_ID; } }
-    public STATE_ID PreviousSTATE_ID { get { return _PreviousState; } }
+    protected Dictionary<Transition, StateID> map = new Dictionary<Transition, StateID>();
+    protected StateID stateID;
+    public StateID _PreviousState;
+    public StateID ID { get { return stateID; } }
+    public StateID PreviousSTATE_ID { get { return _PreviousState; } }
     
-    public void AddTRANSITION(TRANSITION TRANSITION, STATE_ID STATE_ID)
+    public void AddTRANSITION(Transition trans, StateID id)
     {
-        if (TRANSITION == TRANSITION.NullTransition)
+        if (trans == Transition.NullTransition)
         {
             WKStaticFunction.WKMessageError("The Transition is error");
             return;
         }
 
-        if (STATE_ID == STATE_ID.NullStateID)
+        if (id == StateID.NullStateID)
         {
             WKStaticFunction.WKMessageError("The State is error");
             return;
         }
 
-        if (_Map.ContainsKey(TRANSITION))
+        if (map.ContainsKey(trans))
         {
             WKStaticFunction.WKMessageError("The FSM already have this transition for state");
             return;
         }
-        _Map.Add(TRANSITION, STATE_ID);
+        map.Add(trans, id);
     }
 
-    public void DeleteTransition(TRANSITION transition)
+    public void DeleteTransition(Transition trans)
     {
-        if (transition == TRANSITION.NullTransition)
+        if (trans == Transition.NullTransition)
         {
             WKStaticFunction.WKMessageError("The Transition is null, or not fully initialized");
             return;
         }
 
-        if (_Map.ContainsKey(transition))
+        if (map.ContainsKey(trans))
         {
-            _Map.Remove(transition);
+            map.Remove(trans);
             return;
         }
 
         WKStaticFunction.WKMessageLog("The Transition is not on the transition _Map");
     }
     
-    public STATE_ID GetState(TRANSITION transition)
+    public StateID GetOutputState(Transition trans)
     {
-        if (_Map.ContainsKey(transition))
+        if (map.ContainsKey(trans))
         {
-            return _Map[transition];
+            return map[trans];
         }
 
-        return STATE_ID.NullStateID;
+        return StateID.NullStateID;
     }
 
     public virtual void OnEnter() { }
@@ -78,19 +78,19 @@ public abstract class FSMState
 
 public class FSMSystem
 {
-    private List<FSMState> _States;
+    private List<FSMState> states;
 
-    private STATE_ID _CurrentStateID;
-    public STATE_ID GetCurrentStateID { get { return _CurrentStateID; } }
-    private FSMState _CurrentState;
-    public FSMState GetCurrentState { get { return _CurrentState; } }
-    private MonoBehaviour _Caller;
-    public MonoBehaviour GetCaller { get { return _Caller; } }
+    private StateID currentStateID;
+    public StateID GetCurrentStateID { get { return currentStateID; } }
+    private FSMState currentState;
+    public FSMState GetCurrentState { get { return currentState; } }
+    private MonoBehaviour caller;
+    public MonoBehaviour GetCaller { get { return caller; } }
 
     public FSMSystem(MonoBehaviour fsmCaller)
     {
-        _States = new List<FSMState>();
-        _Caller = fsmCaller;
+        states = new List<FSMState>();
+        caller = fsmCaller;
     }
     public void AddState(FSMState stateToAdd)
     {
@@ -99,18 +99,18 @@ public class FSMSystem
             WKStaticFunction.WKMessageError("there is no state to add");
         }
 
-        stateToAdd.SetFSMCaller(_Caller);
+        stateToAdd.SetFSMCaller(caller);
 
-        if (_States.Count == 0)
+        if (states.Count == 0)
         {
-            _States.Add(stateToAdd);
-            _CurrentState = stateToAdd;
-            _CurrentStateID = stateToAdd.ID;
-            _CurrentState.OnEnter();
+            states.Add(stateToAdd);
+            currentState = stateToAdd;
+            currentStateID = stateToAdd.ID;
+            currentState.OnEnter();
             return;
         }
 
-        foreach (FSMState state in _States)
+        foreach (FSMState state in states)
         {
             if (state.ID == stateToAdd.ID)
             {
@@ -118,53 +118,53 @@ public class FSMSystem
                 return;
             }
         }
-        _States.Add(stateToAdd);
+        states.Add(stateToAdd);
     }
 
-    public void DeleteState(STATE_ID stateID)
+    public void DeleteState(StateID stateID)
     {
-        if (stateID == STATE_ID.NullStateID)
+        if (stateID == StateID.NullStateID)
         {
             WKStaticFunction.WKMessageError("the state id is null");
             return;
         }
 
-        foreach (FSMState state in _States)
+        foreach (FSMState state in states)
         {
             if (state.ID == stateID)
             {
-                _States.Remove(state);
+                states.Remove(state);
                 return;
             }
         }
         WKStaticFunction.WKMessageError("the state is not found in the fsm map");
     }
 
-    public void PerformTransition(TRANSITION transition)
+    public void PerformTransition(Transition transition)
     {
-        if (transition == TRANSITION.NullTransition)
+        if (transition == Transition.NullTransition)
         {
             WKStaticFunction.WKMessageError("the transition is null");
             return;
         }
 
-        STATE_ID stateID = _CurrentState.GetState(transition);
-        if (stateID == STATE_ID.NullStateID)
+        StateID stateID = currentState.GetOutputState(transition);
+        if (stateID == StateID.NullStateID)
         {
-            WKStaticFunction.WKMessageError("the state of transition is null ::" + _CurrentState.ID.ToString() + transition.ToString());
+            WKStaticFunction.WKMessageError("the state of transition is null ::" + currentState.ID.ToString() + transition.ToString());
             return;
         }
 
-        _CurrentStateID = stateID;
-        STATE_ID previousState = _CurrentState.ID;
-        foreach (FSMState state in _States)
+        currentStateID = stateID;
+        StateID previousState = currentState.ID;
+        foreach (FSMState state in states)
         {
-            if (state.ID == _CurrentStateID)
+            if (state.ID == currentStateID)
             {
-                _CurrentState.OnLeave();
-                _CurrentState = state;
-                _CurrentState._PreviousState = previousState;
-                _CurrentState.OnEnter();
+                currentState.OnLeave();
+                currentState = state;
+                currentState._PreviousState = previousState;
+                currentState.OnEnter();
                 break;
             }
         }

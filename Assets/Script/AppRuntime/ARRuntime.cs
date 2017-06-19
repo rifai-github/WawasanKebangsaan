@@ -7,24 +7,20 @@ public class ARRuntime : AppRuntime
 {
     void Start()
     {
-        WKSigleton.Instance.MatineeType = EMatineeType.MATINEE_ENTRANCE;
         MakeFSM();
     }
 
     protected override void MakeFSM()
     {
-        MatineeState matineState = new MatineeState();
-        matineState.AddTRANSITION(TRANSITION.TRANSITION_TO_HOMESTATE, STATE_ID.HOME_STATE);
-
         HomeState homeState = new HomeState();
-        homeState.AddTRANSITION(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
+        homeState.AddTRANSITION(Transition.TRANSITION_TO_ARSTATE, StateID.AR_STATE);
 
         ARState arState = new ARState();
-        arState.AddTRANSITION(TRANSITION.TRANSITION_TO_HOMESTATE, STATE_ID.HOME_STATE);
-        arState.AddTRANSITION(TRANSITION.TRANSITION_TO_VIDEOTUTORIALSTATE, STATE_ID.VIDEO_TUTORIAL_STATE);
+        arState.AddTRANSITION(Transition.TRANSITION_TO_HOMESTATE, StateID.HOME_STATE);
+        arState.AddTRANSITION(Transition.TRANSITION_TO_VIDEOTUTORIALSTATE, StateID.VIDEO_TUTORIAL_STATE);
 
         VideoTutorialState videoState = new VideoTutorialState();
-        videoState.AddTRANSITION(TRANSITION.TRANSITION_TO_ARSTATE, STATE_ID.AR_STATE);
+        videoState.AddTRANSITION(Transition.TRANSITION_TO_ARSTATE, StateID.AR_STATE);
         
         _FSM = new FSMSystem(this);
         _FSM.AddState(homeState);

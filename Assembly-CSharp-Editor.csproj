@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EasyAR\Scripts\Editor\PostBuild.cs" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
      <None Include="Assets\HelloARMultiTarget-MultiTracker\Duck\README.txt" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Skybox.shader" />
+     <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Smooth.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\TransparentVideo.shader" />
      <None Include="Assets\StandardAssets\Shader\DepthMask.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\RealityPlane.shader" />
@@ -117,8 +120,12 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{B2F5C4B5-022B-DAE6-C999-B00D78D1A20F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{EB21969E-CEEF-5FC3-A6C0-2791E06384F5}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{018466AF-B5B6-9CCE-DD7D-C1A653221281}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

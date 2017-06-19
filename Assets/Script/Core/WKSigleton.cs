@@ -10,9 +10,6 @@ using UnityEngine.EventSystems;
 
 public class WKSigleton : MonoBehaviour
 {
-    private EMatineeType _MatineeType;
-    public EMatineeType MatineeType { get { return _MatineeType; } set { _MatineeType = value; } }
-
     public static WKSigleton Instance { get; private set; }
     
     void Awake()

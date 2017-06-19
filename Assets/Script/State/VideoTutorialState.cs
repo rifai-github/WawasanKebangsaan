@@ -7,7 +7,7 @@ public class VideoTutorialState : FSMState
 {
     public VideoTutorialState()
     {
-        _STATE_ID = STATE_ID.VIDEO_TUTORIAL_STATE;
+        stateID = StateID.VIDEO_TUTORIAL_STATE;
     }
 
     public override void OnEnter()
@@ -24,7 +24,7 @@ public class VideoTutorialState : FSMState
         if (Input.GetKey(KeyCode.Escape))
         {
             AppRuntime appRuntime = _FSMCaller as AppRuntime;
-            appRuntime.SetTransition(TRANSITION.TRANSITION_TO_HOMESTATE);
+            appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
         }
         base.Update();
     }

@@ -7,7 +7,7 @@ public class ARState : FSMState
 {
     public ARState()
     {
-        _STATE_ID = STATE_ID.AR_STATE;
+        stateID = StateID.AR_STATE;
     }
 
     public override void OnEnter()
@@ -15,7 +15,6 @@ public class ARState : FSMState
         WKStaticFunction.WKMessageLog("Enter ARState");
         ARModal arModal = ARModal.Instance();
         arModal.OpenModal();
-        arModal.OnRegisterModal(PlayVideoAction,On3DAction);
 
         base.OnEnter();
     }
@@ -30,7 +29,7 @@ public class ARState : FSMState
         WKStaticFunction.WKMessageLog("Play Video");
 
         AppRuntime appRuntime = _FSMCaller as AppRuntime;
-        appRuntime.SetTransition(TRANSITION.TRANSITION_TO_VIDEOTUTORIALSTATE);
+        appRuntime.SetTransition(Transition.TRANSITION_TO_VIDEOTUTORIALSTATE);
     }
 
     public override void Update()
@@ -38,12 +37,9 @@ public class ARState : FSMState
         if (Input.GetKey(KeyCode.Escape))
         {
             AppRuntime appRuntime = _FSMCaller as AppRuntime;
-            appRuntime.SetTransition(TRANSITION.TRANSITION_TO_HOMESTATE);
+            appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
         }
-
-        ARModal arModal = ARModal.Instance();
-        arModal.TrackingObject();
-
+        
         base.Update();
     }
 

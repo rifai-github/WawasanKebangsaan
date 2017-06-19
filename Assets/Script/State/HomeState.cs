@@ -8,7 +8,7 @@ public class HomeState : FSMState
 
     public HomeState()
     {
-        _STATE_ID = STATE_ID.HOME_STATE;
+        stateID = StateID.HOME_STATE;
     }
 
     public override void OnEnter()
@@ -26,7 +26,7 @@ public class HomeState : FSMState
         WKStaticFunction.WKMessageLog("Start on Click");
 
         AppRuntime appRuntime = _FSMCaller as AppRuntime;
-        appRuntime.SetTransition(TRANSITION.TRANSITION_TO_ARSTATE);
+        appRuntime.SetTransition(Transition.TRANSITION_TO_ARSTATE);
     }
 
     public override void Update()

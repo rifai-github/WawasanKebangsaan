@@ -20,7 +20,7 @@ public class AppRuntime : MonoBehaviour
 
     // set the transition so the things in the app gonna call this to transition from one state
     //To another
-    public void SetTransition(TRANSITION transition)
+    public void SetTransition(Transition transition)
     {
         if (_FSM != null)
             _FSM.PerformTransition(transition);
