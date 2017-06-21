@@ -48,10 +48,23 @@
   <ItemGroup>
      <Compile Include="Assets\EasyAR\Scripts\Editor\PostBuild.cs" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\HelloARMultiTarget-MultiTracker\Duck\README.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Skybox.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Smooth.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+AddSoft.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+AddSoft VColor.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+Add.shader" />
+     <None Include="Assets\Plugins\JMO Assets\!JMO Assets Readme.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Hidden.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+Add VColor.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\TransparentVideo.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\CartoonFX4 Readme.txt" />
      <None Include="Assets\StandardAssets\Shader\DepthMask.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\RealityPlane.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
@@ -117,6 +130,9 @@
  </Reference>
  <Reference Include="EasyAR.Unity.Editor">
  <HintPath>C:/Users/Rifai Kridolaksono/Documents/Unity Project/[SKRIPSI]/Wawasan Kebangsaan/Assets/EasyAR/Scripts/Editor/EasyAR.Unity.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="JMOAssets">
+ <HintPath>C:/Users/Rifai Kridolaksono/Documents/Unity Project/[SKRIPSI]/Wawasan Kebangsaan/Assets/Plugins/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

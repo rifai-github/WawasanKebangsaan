@@ -46,6 +46,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\UI\CFX_Demo_GTButton.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Demo\UI\CFX_Demo_GTToggle.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_InspectorHelp.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\Plugins\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
      <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraMove.cs" />
      <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraMoveSmooth.cs" />
      <Compile Include="Assets\Plugins\LeanTouch\Examples\Scripts\LeanCameraZoom.cs" />
@@ -90,10 +107,23 @@
      <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanSnapshot.cs" />
      <Compile Include="Assets\Plugins\LeanTouch\Scripts\LeanTouch.cs" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\HelloARMultiTarget-MultiTracker\Duck\README.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Skybox.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAlphaBlend_Alpha8.shader" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Shaders\Smooth.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+AddSoft.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+AddSoft VColor.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+Add.shader" />
+     <None Include="Assets\Plugins\JMO Assets\!JMO Assets Readme.txt" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Hidden.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX4 Particle AlphaBlend+Add VColor.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\TransparentVideo.shader" />
+     <None Include="Assets\Plugins\JMO Assets\Cartoon FX\CartoonFX4 Readme.txt" />
      <None Include="Assets\StandardAssets\Shader\DepthMask.shader" />
      <None Include="Assets\EasyAR\Resources\Shaders\RealityPlane.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />

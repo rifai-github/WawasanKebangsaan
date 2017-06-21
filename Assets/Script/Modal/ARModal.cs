@@ -10,25 +10,27 @@ public class ARModal : BaseModal
     [SerializeField]
     private Button _PlayVideoButton;
     [SerializeField]
+    private Animator _3dAnimation;
+    [SerializeField]
     private GameObject _BolaDunia;
     [SerializeField]
     private GameObject _PetaIndonesia;
     [SerializeField]
-    private GameObject _3DModal;
+    private Transform _MarkerPosition;
     [SerializeField]
-    private GameObject _MarkerWawasanKebangsaan;
+    private Transform _PositionOnClick;
     [SerializeField]
-    private Transform _Hide3D;
+    private Transform _Hide3d;
+    [SerializeField]
+    private Transform _DuniaShow;
 
-    [SerializeField]
-    private List<Transform> _Provinsi;
-
-    private Transform _PositionSelect;
     private GameObject _ProvinsiSelect;
 
-    private bool _3dClick;
-    private string _NameObjectFound;
-    public string GetNameObjectFound { get { return _NameObjectFound; } }
+    private bool _bProvClick;
+    private bool _bEnter3d;
+
+    private bool _bMarkerDetect;
+    public bool SetFoundMarker { set { _bMarkerDetect = value; } }
     
     private static ARModal _Instance;
 
@@ -46,66 +48,88 @@ public class ARModal : BaseModal
         return _Instance;
     }
 
+    public override void OpenModal()
+    {
+        _bEnter3d = true;
+        _bProvClick = false;
+
+        _3dAnimation.SetBool("Dunia", false);
+        _3dAnimation.SetBool("Peta", false);
+        _3dAnimation.SetBool("Click", false);
+
+        base.OpenModal();
+    }
+
     protected override void Tick(float deltaTime)
     {
-        _BolaDunia.transform.Rotate(0, Time.deltaTime * 10, 0);
-        if (_ProvinsiSelect != null)
+        DetectObject();
+
+        _BolaDunia.transform.Rotate(0, Time.deltaTime * 15, 0);
+        
+        base.Tick(deltaTime);
+    }
+
+    private void DetectObject()
+    {
+        if (_bMarkerDetect)
         {
-            if (_3dClick)
+            StartCoroutine(EnterAnimator());
+
+            if (_bProvClick)
             {
-                foreach (Transform prov in _Provinsi)
-                {
-                    if (prov != _ProvinsiSelect.transform)
-                    {
-                        float hide = Mathf.Lerp(_ProvinsiSelect.transform.position.y, _Hide3D.position.y, Time.deltaTime);
-                        prov.Translate(prov.position.x, hide, prov.position.z);
-                    }
-                }
+                _3dAnimation.SetBool("Click", true);
 
-
-                //_ProvinsiSelect.transform.position = Vector3.Lerp(_ProvinsiSelect.transform.position, _PositionSelect.position, Time.deltaTime * 5);
-                //_PetaIndonesia.transform.position = Vector3.Lerp(_PetaIndonesia.transform.position, _Hide3D.position, Time.deltaTime);
-                if (_PetaIndonesia.transform.position == _Hide3D.position)
-                    _3dClick = false;
+                _ProvinsiSelect.transform.localRotation = Quaternion.Lerp(_ProvinsiSelect.transform.localRotation, _MarkerPosition.localRotation, Time.deltaTime * 5);
+                _ProvinsiSelect.transform.localPosition = Vector3.Lerp(_ProvinsiSelect.transform.localPosition, _MarkerPosition.localPosition, Time.deltaTime * 5);
+                _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, _MarkerPosition.localScale, Time.deltaTime * 5);
             }
         }
-        base.Tick(deltaTime);
+        else  // Lost
+        {
+            _bEnter3d = true;
+            _bProvClick = false;
+
+            _3dAnimation.SetBool("Dunia", false);
+            _3dAnimation.SetBool("Peta", false);
+            _3dAnimation.SetBool("Click", false);
+
+            if (_ProvinsiSelect != null)
+            {
+                _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, Vector3.zero, Time.deltaTime * 5);
+                Destroy(_ProvinsiSelect, 1);
+            }
+        }
+    }
+
+    private IEnumerator EnterAnimator()
+    {
+        if(_bEnter3d)
+            _3dAnimation.SetBool("Dunia", true);
+        _bEnter3d = false;
+
+        yield return new WaitForSeconds(11f);
+
+        if (_BolaDunia.activeSelf)
+        {
+            _3dAnimation.SetBool("Peta", true);
+            yield return new WaitForSeconds(1f);
+            _3dAnimation.SetBool("Dunia", false);
+        }
     }
 
     public void ProvinsiAction(GameObject prov, Transform pos)
     {
-        _3dClick = true;
-        _ProvinsiSelect = prov;
+        if (_ProvinsiSelect != null)
+            Destroy(_ProvinsiSelect);
+
+        _bProvClick = true;
+        _ProvinsiSelect = Instantiate(prov);
+        ProvinsiClick provinsiClick = _ProvinsiSelect.GetComponent<ProvinsiClick>();
+        Destroy(provinsiClick);
+
+        //_ProvinsiSelect.AddComponent<>()
     }
-
-    public void TrackingObject()
-    {
-        
-
-
-        //int _iMarker = 0;
-
-        //if (_MarkerAR[_iMarker].activeSelf)
-        //{
-        //    _Model3DVideo.SetActive(true);
-        //    _NameObjectFound = _MarkerAR[_iMarker].name;
-        //    _Model3DVideo.transform.position = Vector3.Lerp(_Model3DVideo.transform.position, _OnTrackObject[_iMarker].position, _Speed * Time.deltaTime);
-        //    _Model3DVideo.transform.rotation = Quaternion.Lerp(_Model3DVideo.transform.rotation, _OnTrackObject[_iMarker].rotation, _Speed * Time.deltaTime);
-        //    _iMarker += 1;
-        //}
-        ////else if (_MarkerAR[_iMarker].activeSelf)
-        ////{
-        ////    _VideoModel3D.transform.position = Vector3.Lerp(_VideoModel3D.transform.position, _OnTrackObject[1].position, _Speed * Time.deltaTime);
-        ////    _VideoModel3D.transform.rotation = Quaternion.Lerp(_VideoModel3D.transform.rotation, _OnTrackObject[1].rotation, _Speed * Time.deltaTime);
-        ////    _iMarker += 1;
-        ////}
-        //else
-        //{
-        //    _Model3DVideo.transform.position = Vector3.Lerp(_Model3DVideo.transform.position, _OnLostTrackObject.position, _Speed * Time.deltaTime);
-        //    _Model3DVideo.transform.rotation = Quaternion.Lerp(_Model3DVideo.transform.rotation, _OnLostTrackObject.rotation, _Speed * Time.deltaTime);
-        //}
-    }
-
+    
     public void OnRegisterModal(UnityAction PlayVideoAction)
     {
         _PlayVideoButton.onClick.AddListener(PlayVideoAction);
@@ -114,5 +138,11 @@ public class ARModal : BaseModal
     public void UnRegisterModal()
     {
         _PlayVideoButton.onClick.RemoveAllListeners();
+    }
+
+    public override void CloseModal()
+    {
+
+        base.CloseModal();
     }
 }
