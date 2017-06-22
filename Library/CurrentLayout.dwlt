@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 9}
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 51
+  controlID: 75
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 438, y: 271}
   m_MaxSize: {x: 14008, y: 10021}
   vertical: 0
-  controlID: 101
+  controlID: 126
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 342}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 1
-  controlID: 49
+  controlID: 124
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,7 +217,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &10
 MonoBehaviour:
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 342}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 50
+  controlID: 125
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,10 +393,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -324.5
+    m_HBaseRangeMax: 324.5
+    m_VBaseRangeMin: -208.5
+    m_VBaseRangeMax: 208.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -405,7 +405,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -517,9 +517,9 @@ MonoBehaviour:
     height: 614
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e2fbffff00000000f8400000f84100001a42000036420000
+    m_SelectedIDs: 38b20100
+    m_LastClickedID: 111160
+    m_ExpandedIDs: 30ddfbfffcddfbff40dffbffdee2fbffaae3fbffeee4fbff360afcff020bfcff460cfcff9874fcff8075fcffc476fcff76d1fcff5ed2fcffa2d3fcff3ad8fcff22d9fcff66dafcffe8ddfcffd0defcff14e0fcff54e3fcff3ce4fcff80e5fcffe00afdffca0bfdff0e0dfdffe80ffdffd210fdff1612fdff4e30fdff3631fdff7c32fdff263afdff103bfdff543cfdff7a6dfdff646efdffa86ffdff6285fdff4c86fdff9087fdff90d7fdff7ad8fdffc0d9fdff8a0efeffae0efeffce10feff3214feff2215feff6c16feff869fffff74a0ffffbea1ffffdca6ffffbca7ffff04a9ffffe2fbffff000000005a410000fa410000144200001a42000036420000d4710000d67100000c7300002e730000347300007473000066740000c2b00000dcb00000e2b000000ab10000bac700005ec800009ac90000b4c90000bac90000ccc90000e2c900007aca000072db00008cdb0000a4db0000badb0000bedb000022e600003ce6000054e600006ae60000ca020100e4020100fc020100120301002a0b0100360b01006c0d0100860d0100be0d0100421801004e1801008c1a0100a61a0100de1a0100f2220100fe2201003c2501008e2501007a58010086580100c45a0100de5a01000c5b0100165b01009a710100a6710100e4730100fe7301002c74010036740100ca900100d6900100149301002e930100469301005c93010066930100c4af0100e0af010040b001001eb2010038b201003eb2010050b2010066b20100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -612,7 +612,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Animation/AR
+    - Assets/Script/Plugins
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
@@ -624,7 +624,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6e450000
     m_LastClickedID: 17774
-    m_ExpandedIDs: 00000000d2250000cc270000dc270000442800008a290000a0290000002b0000022e00008630000068340000983500005c3700006a3800003c3a0000003b0000e63b0000203c0000da440000dc440000de440000
+    m_ExpandedIDs: 00000000ce250000c8270000d827000040280000862900009c290000fc2a0000002e00008030000060340000903500005437000062380000323a0000f63a0000e83b0000223c0000fa440000fc440000fe440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -652,7 +652,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2250000cc270000dc270000442800008a290000a0290000002b0000022e00008630000068340000983500005c3700006a3800003c3a0000003b0000e63b0000203c0000da440000dc440000de440000
+    m_ExpandedIDs: 00000000ce250000c827000040280000862900009c290000fc2a00000a2c0000282c0000002e00009631000054370000323a0000e83b0000223c0000fa440000fc440000fe440000c0780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 62210000d81b0000221c00001e1d0000c01d0000000000002c1c0000401c0000501c0000421c00009c1c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -734,14 +734,14 @@ MonoBehaviour:
     width: 649
     height: 434
   m_SceneLighting: 0
-  lastFramingTime: 10727.374446554113
+  lastFramingTime: 40610.65887083697
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.671505, y: 5.511791, z: 0.07508373}
+    m_Target: {x: 1291.6504, y: 529.23596, z: 0}
     speed: 2
-    m_Value: {x: 3.671505, y: 5.511791, z: 0.07508373}
+    m_Value: {x: 1291.6504, y: 529.23596, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -764,18 +764,18 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.32989827, y: 0.025427626, z: -0.008937327, w: -0.94366974}
+    m_Target: {x: -0.38451234, y: -0.13638756, z: 0.057474438, w: -0.91117805}
     speed: 2
-    m_Value: {x: -0.32988644, y: 0.025426714, z: -0.008937007, w: -0.9436359}
+    m_Value: {x: -0.38451234, y: -0.13638756, z: 0.057474438, w: -0.91117805}
   m_Size:
-    m_Target: 2549.7803
+    m_Target: 1408.6412
     speed: 2
-    m_Value: 2549.7803
+    m_Value: 1408.6412
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
-  m_LastSceneViewRotation: {x: -0.49921915, y: 0.053748343, z: -0.031017745, w: -0.8642507}
+  m_LastSceneViewRotation: {x: -0.38451234, y: -0.13638756, z: 0.057474438, w: -0.91117805}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

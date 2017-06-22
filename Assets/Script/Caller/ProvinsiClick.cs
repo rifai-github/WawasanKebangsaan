@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using WawasanKebangsaanBase;
 
 public class ProvinsiClick : BaseCaller 
 {
     [SerializeField]
-    private Provinsi _Provinsi;
+    private GameObject _MateriProv;
 
     protected override void OnClickAction()
     {
-        Debug.Log(_Provinsi);
+        WKSigleton.Instance.PROVINSI = _Provinsi;
 
         ARModal ar = ARModal.Instance();
-        ar.ProvinsiAction(gameObject, gameObject.transform);
+        ar.ProvinsiAction(gameObject, _MateriProv);
 
         base.OnClickAction();
     }

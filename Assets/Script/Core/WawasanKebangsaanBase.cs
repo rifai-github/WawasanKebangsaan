@@ -6,6 +6,14 @@ using UnityEngine.Events;
 
 namespace WawasanKebangsaanBase
 {
+    public struct CONTS_VAR
+    {
+        public static string OFFLINE_URL = "file://"+Application.persistentDataPath + "/";
+        public static string SERVER_URL = "http://rivayx.000webhostapp.com/WawasanKebangsaan/";
+        public static string OFFLINE_VIDEO = OFFLINE_URL + "video/";
+        public static string ONLINE_VIDEO = SERVER_URL + "video/";
+    }
+
     public enum StateID 
     {
         NullStateID = 0,

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using WawasanKebangsaanBase;
+using System.IO;
 
 public class HomeModal : BaseModal 
 {
@@ -11,7 +12,7 @@ public class HomeModal : BaseModal
     private Button _StartButton;
     [SerializeField]
     private Button _InfoButton;
-
+    
     private static HomeModal _Instance;
 
     public static HomeModal Instance()
@@ -27,7 +28,7 @@ public class HomeModal : BaseModal
         }
         return _Instance;
     }
-    
+
     public void OnRegisterModal(UnityAction OnStartAction)
     {
         _StartButton.onClick.AddListener(OnStartAction);

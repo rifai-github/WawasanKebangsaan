@@ -10,6 +10,8 @@ public class ARModal : BaseModal
     [SerializeField]
     private Button _PlayVideoButton;
     [SerializeField]
+    private Image _LambangProv;
+    [SerializeField]
     private Animator _3dAnimation;
     [SerializeField]
     private GameObject _BolaDunia;
@@ -17,14 +19,9 @@ public class ARModal : BaseModal
     private GameObject _PetaIndonesia;
     [SerializeField]
     private Transform _MarkerPosition;
-    [SerializeField]
-    private Transform _PositionOnClick;
-    [SerializeField]
-    private Transform _Hide3d;
-    [SerializeField]
-    private Transform _DuniaShow;
 
     private GameObject _ProvinsiSelect;
+    private GameObject _MateriObject;
 
     private bool _bProvClick;
     private bool _bEnter3d;
@@ -82,6 +79,13 @@ public class ARModal : BaseModal
                 _ProvinsiSelect.transform.localRotation = Quaternion.Lerp(_ProvinsiSelect.transform.localRotation, _MarkerPosition.localRotation, Time.deltaTime * 5);
                 _ProvinsiSelect.transform.localPosition = Vector3.Lerp(_ProvinsiSelect.transform.localPosition, _MarkerPosition.localPosition, Time.deltaTime * 5);
                 _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, _MarkerPosition.localScale, Time.deltaTime * 5);
+
+                if (_MateriObject != null)
+                {
+                    _MateriObject.transform.localRotation = Quaternion.Lerp(_MateriObject.transform.localRotation, _MarkerPosition.localRotation, Time.deltaTime * 5);
+                    _MateriObject.transform.localPosition = Vector3.Lerp(_MateriObject.transform.localPosition, _MarkerPosition.localPosition, Time.deltaTime * 5);
+                    //_MateriObject.transform.localScale = Vector3.Lerp(_MateriObject.transform.localScale, _MarkerPosition.localScale, Time.deltaTime * 5);
+                }
             }
         }
         else  // Lost
@@ -96,7 +100,9 @@ public class ARModal : BaseModal
             if (_ProvinsiSelect != null)
             {
                 _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, Vector3.zero, Time.deltaTime * 5);
+                _MateriObject.transform.localScale = Vector3.Lerp(_MateriObject.transform.localScale, Vector3.zero, Time.deltaTime * 5);
                 Destroy(_ProvinsiSelect, 1);
+                Destroy(_MateriObject, 1);
             }
         }
     }
@@ -107,7 +113,8 @@ public class ARModal : BaseModal
             _3dAnimation.SetBool("Dunia", true);
         _bEnter3d = false;
 
-        yield return new WaitForSeconds(11f);
+        //yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(1f);
 
         if (_BolaDunia.activeSelf)
         {
@@ -117,17 +124,56 @@ public class ARModal : BaseModal
         }
     }
 
-    public void ProvinsiAction(GameObject prov, Transform pos)
+    public void ProvinsiAction(GameObject prov, GameObject obj)
     {
-        if (_ProvinsiSelect != null)
-            Destroy(_ProvinsiSelect);
-
         _bProvClick = true;
+        if (_ProvinsiSelect != null || _MateriObject != null)
+        {
+            Destroy(_ProvinsiSelect);
+            Destroy(_MateriObject);
+        }
+
         _ProvinsiSelect = Instantiate(prov);
         ProvinsiClick provinsiClick = _ProvinsiSelect.GetComponent<ProvinsiClick>();
         Destroy(provinsiClick);
 
-        //_ProvinsiSelect.AddComponent<>()
+        if (obj != null)
+        {
+            _MateriObject = Instantiate(obj);
+            _MateriObject.AddComponent<PlayVideoAdat>();
+        }
+    }
+
+    public void PlayVideo(Provinsi prov)
+    {
+        string videoProv = "";
+        string path = "";
+
+        switch (prov)
+        {
+            case Provinsi.JAWA_TENGAH:
+                videoProv = "/pakar.mp4";
+                break;
+            case Provinsi.PAPUA:
+                videoProv = "/Papua.mp4";
+                break;
+        }
+
+        if(WKSigleton.Instance.OnlineMode)
+            path = CONTS_VAR.ONLINE_VIDEO + videoProv;
+        else
+            path = CONTS_VAR.OFFLINE_VIDEO + videoProv;
+
+        StartCoroutine(PlayVideo(path));
+    }
+
+    private IEnumerator PlayVideo(string path)
+    {
+        bool vPlay = Handheld.PlayFullScreenMovie(path, Color.red, FullScreenMovieControlMode.Minimal, FullScreenMovieScalingMode.AspectFit);
+        WKStaticFunction.WKMessageLog("Play Video :: " + vPlay);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        WKStaticFunction.WKMessageLog("Stop Video");
     }
     
     public void OnRegisterModal(UnityAction PlayVideoAction)
