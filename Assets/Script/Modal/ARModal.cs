@@ -12,19 +12,31 @@ public class ARModal : BaseModal
     [SerializeField]
     private Image _LambangProv;
     [SerializeField]
-    private Animator _3dAnimation;
+    private GameObject _3dModal;
     [SerializeField]
-    private GameObject _BolaDunia;
+    private Transform _BolaDunia;
     [SerializeField]
-    private GameObject _PetaIndonesia;
+    private Transform _PetaIndonesia;
     [SerializeField]
-    private Transform _MarkerPosition;
+    private Transform _MarkerTransform;
+
+    [SerializeField]
+    private Button Button1;
+    [SerializeField]
+    private Button Button2;
+    [SerializeField]
+    private GameObject GameObject1;
+    [SerializeField]
+    private GameObject GameObject2;
+
+    private Vector3 _PetaStartPosition;
+    private Vector3 _PetaStartScale;
 
     private GameObject _ProvinsiSelect;
-    private GameObject _MateriObject;
+    private Transform _ProvinsiView;
+    private Animator _3DAnimate;
 
-    private bool _bProvClick;
-    private bool _bEnter3d;
+    private bool _bProvView;
 
     private bool _bMarkerDetect;
     public bool SetFoundMarker { set { _bMarkerDetect = value; } }
@@ -47,20 +59,23 @@ public class ARModal : BaseModal
 
     public override void OpenModal()
     {
-        _bEnter3d = true;
-        _bProvClick = false;
-
-        _3dAnimation.SetBool("Dunia", false);
-        _3dAnimation.SetBool("Peta", false);
-        _3dAnimation.SetBool("Click", false);
-
         base.OpenModal();
+
+        OnRegisterModal();
+        _PetaStartPosition = _PetaIndonesia.position;
+        _PetaStartScale = _PetaIndonesia.localScale;
+        _3DAnimate = _3dModal.GetComponent<Animator>();
+
+        _bProvView = false;
+
+        _3DAnimate.SetBool("Dunia", false);
+        _3DAnimate.SetBool("Peta", false);
+
     }
 
     protected override void Tick(float deltaTime)
     {
         DetectObject();
-
         _BolaDunia.transform.Rotate(0, Time.deltaTime * 15, 0);
         
         base.Tick(deltaTime);
@@ -70,125 +85,137 @@ public class ARModal : BaseModal
     {
         if (_bMarkerDetect)
         {
+            Button1.gameObject.SetActive(true);
+            Button2.gameObject.SetActive(true);
+
+            _PetaIndonesia.gameObject.SetActive(true);
+
+            _3dModal.transform.position = Vector3.Lerp(_3dModal.transform.position, _MarkerTransform.position, Time.deltaTime * 5);
+            _3dModal.transform.rotation = Quaternion.Lerp(_3dModal.transform.rotation, _MarkerTransform.rotation, Time.deltaTime * 5);
+
             StartCoroutine(EnterAnimator());
 
-            if (_bProvClick)
-            {
-                _3dAnimation.SetBool("Click", true);
-
-                _ProvinsiSelect.transform.localRotation = Quaternion.Lerp(_ProvinsiSelect.transform.localRotation, _MarkerPosition.localRotation, Time.deltaTime * 5);
-                _ProvinsiSelect.transform.localPosition = Vector3.Lerp(_ProvinsiSelect.transform.localPosition, _MarkerPosition.localPosition, Time.deltaTime * 5);
-                _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, _MarkerPosition.localScale, Time.deltaTime * 5);
-
-                if (_MateriObject != null)
-                {
-                    _MateriObject.transform.localRotation = Quaternion.Lerp(_MateriObject.transform.localRotation, _MarkerPosition.localRotation, Time.deltaTime * 5);
-                    _MateriObject.transform.localPosition = Vector3.Lerp(_MateriObject.transform.localPosition, _MarkerPosition.localPosition, Time.deltaTime * 5);
-                    //_MateriObject.transform.localScale = Vector3.Lerp(_MateriObject.transform.localScale, _MarkerPosition.localScale, Time.deltaTime * 5);
-                }
-            }
         }
         else  // Lost
         {
-            _bEnter3d = true;
-            _bProvClick = false;
+            Button1.gameObject.SetActive(false);
+            Button2.gameObject.SetActive(false);
 
-            _3dAnimation.SetBool("Dunia", false);
-            _3dAnimation.SetBool("Peta", false);
-            _3dAnimation.SetBool("Click", false);
+            _PetaIndonesia.gameObject.SetActive(false);
+            _bProvView = false;
 
-            if (_ProvinsiSelect != null)
-            {
-                _ProvinsiSelect.transform.localScale = Vector3.Lerp(_ProvinsiSelect.transform.localScale, Vector3.zero, Time.deltaTime * 5);
-                _MateriObject.transform.localScale = Vector3.Lerp(_MateriObject.transform.localScale, Vector3.zero, Time.deltaTime * 5);
-                Destroy(_ProvinsiSelect, 1);
-                Destroy(_MateriObject, 1);
-            }
+            _3DAnimate.SetBool("Dunia", false);
+            _3DAnimate.SetBool("Peta", false);
+
+            Destroy(_ProvinsiSelect, 1);
+            _ProvinsiSelect = null;
         }
+
+        ProvinsiView();
     }
 
     private IEnumerator EnterAnimator()
     {
-        if(_bEnter3d)
-            _3dAnimation.SetBool("Dunia", true);
-        _bEnter3d = false;
+        _3DAnimate.SetBool("Dunia", true);
 
-        //yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(5f);
+
+        _3DAnimate.SetBool("Peta", true);
         yield return new WaitForSeconds(1f);
-
-        if (_BolaDunia.activeSelf)
-        {
-            _3dAnimation.SetBool("Peta", true);
-            yield return new WaitForSeconds(1f);
-            _3dAnimation.SetBool("Dunia", false);
-        }
+        _3DAnimate.SetBool("Dunia", false);
+        
     }
 
-    public void ProvinsiAction(GameObject prov, GameObject obj)
+    public void Action1()
     {
-        _bProvClick = true;
-        if (_ProvinsiSelect != null || _MateriObject != null)
+        ProvinsiAction(GameObject1);
+    }
+    public void Action2()
+    {
+        ProvinsiAction(GameObject2);
+    }
+
+    public void ProvinsiAction(GameObject prov)
+    {
+        if (_ProvinsiSelect != null)
         {
             Destroy(_ProvinsiSelect);
-            Destroy(_MateriObject);
-        }
+        }        
+        _bProvView = true;
 
-        _ProvinsiSelect = Instantiate(prov);
-        ProvinsiClick provinsiClick = _ProvinsiSelect.GetComponent<ProvinsiClick>();
-        Destroy(provinsiClick);
+        _ProvinsiSelect = Instantiate(prov) as GameObject;
+        _ProvinsiSelect.name = prov.name + " (ProvinsiSelected)";
+        //_ProvinsiSelect.transform.SetParent(_3dModal.transform);
+        _ProvinsiSelect.transform.localScale = prov.transform.lossyScale;
 
-        if (obj != null)
+        foreach (Component comp in _ProvinsiSelect.GetComponents<Component>())
         {
-            _MateriObject = Instantiate(obj);
-            _MateriObject.AddComponent<PlayVideoAdat>();
+            if (!(comp is Transform))
+            {
+                Destroy(comp);
+            }
         }
+
+        _ProvinsiView = _ProvinsiSelect.transform.GetChild(0);
     }
 
     public void PlayVideo(Provinsi prov)
     {
         string videoProv = "";
-        string path = "";
 
         switch (prov)
         {
-            case Provinsi.JAWA_TENGAH:
-                videoProv = "/pakar.mp4";
+            case Provinsi.JawaTengah:
+                videoProv = "pakar.mp4";
                 break;
-            case Provinsi.PAPUA:
-                videoProv = "/Papua.mp4";
+            case Provinsi.Papua:
+                videoProv = "Papua.mp4";
                 break;
         }
+        //manggilnya pakai JSON
+        WKSigleton.Instance.PlayVideo(videoProv);
+    }
 
-        if(WKSigleton.Instance.OnlineMode)
-            path = CONTS_VAR.ONLINE_VIDEO + videoProv;
+    private void PlayVideoAction()
+    {
+        WKSigleton.Instance.PlayVideo(VideoType.VIDEO_TUTORIAL);
+    }
+
+
+    private void ProvinsiView()
+    {
+
+        if (_bProvView)
+        {
+            _3DAnimate.enabled = false;
+            _ProvinsiSelect.transform.position = _MarkerTransform.position;
+            _ProvinsiSelect.transform.rotation = _MarkerTransform.rotation;
+            _PetaIndonesia.transform.position = Vector3.Lerp(_PetaIndonesia.transform.position, _ProvinsiView.position, Time.deltaTime * 5);
+            _PetaIndonesia.transform.localScale = Vector3.Lerp(_PetaIndonesia.transform.localScale, _ProvinsiView.lossyScale, Time.deltaTime * 5);
+        }
         else
-            path = CONTS_VAR.OFFLINE_VIDEO + videoProv;
-
-        StartCoroutine(PlayVideo(path));
+        {
+            _3DAnimate.enabled = true;
+        }
     }
 
-    private IEnumerator PlayVideo(string path)
+    private void OnRegisterModal()
     {
-        bool vPlay = Handheld.PlayFullScreenMovie(path, Color.red, FullScreenMovieControlMode.Minimal, FullScreenMovieScalingMode.AspectFit);
-        WKStaticFunction.WKMessageLog("Play Video :: " + vPlay);
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        WKStaticFunction.WKMessageLog("Stop Video");
-    }
-    
-    public void OnRegisterModal(UnityAction PlayVideoAction)
-    {
+        Button1.onClick.AddListener(Action1);
+        Button2.onClick.AddListener(Action2);
         _PlayVideoButton.onClick.AddListener(PlayVideoAction);
     }
 
-    public void UnRegisterModal()
+    private void UnRegisterModal()
     {
+        Button1.onClick.RemoveAllListeners();
+        Button2.onClick.RemoveAllListeners();
         _PlayVideoButton.onClick.RemoveAllListeners();
     }
 
     public override void CloseModal()
     {
-
+        UnRegisterModal();
         base.CloseModal();
     }
 }

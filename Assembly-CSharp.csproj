@@ -61,7 +61,6 @@
      <Compile Include="Assets\Script\AppRuntime\ARRuntime.cs" />
      <Compile Include="Assets\Script\Caller\BaseCaller.cs" />
      <Compile Include="Assets\Script\Caller\ProvinsiClick.cs" />
-     <Compile Include="Assets\Script\Caller\ShowObject.cs" />
      <Compile Include="Assets\Script\Core\AppRuntime.cs" />
      <Compile Include="Assets\Script\Core\BaseModal.cs" />
      <Compile Include="Assets\Script\Core\FSMSystem.cs" />

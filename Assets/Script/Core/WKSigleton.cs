@@ -37,4 +37,44 @@ public class WKSigleton : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+    public void PlayVideo(VideoType type)
+    {
+        switch (type)
+        {
+            case VideoType.VIDEO_TUTORIAL:
+                StartCoroutine(PlayVideoCourotine("Video Tutorial.mp4"));
+                break;
+            default:
+                WKStaticFunction.WKMessageError("Wrong Call Method PlayVideo");
+                break;
+        }
+    }
+
+    public void PlayVideo(string videoName)
+    {
+        StartCoroutine(PlayVideoCourotine(videoName));
+    }
+
+    public void PlayVideo(VideoType type, string videoName)
+    {
+
+    }
+
+    private IEnumerator PlayVideoCourotine(string videoName)
+    {
+        string path;
+
+        if (WKSigleton.Instance.OnlineMode)
+            path = CONTS_VAR.ONLINE_VIDEO + videoName;
+        else
+            path = CONTS_VAR.OFFLINE_VIDEO + videoName;
+
+        bool vPlay = Handheld.PlayFullScreenMovie(path, Color.black, FullScreenMovieControlMode.Minimal, FullScreenMovieScalingMode.AspectFit);
+        WKStaticFunction.WKMessageLog("Play Video :: " + vPlay);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        WKStaticFunction.WKMessageLog("Stop Video");
+    }
 }

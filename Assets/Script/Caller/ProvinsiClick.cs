@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class ProvinsiClick : BaseCaller 
 {
-    [SerializeField]
-    private GameObject _MateriProv;
-
     protected override void OnClickAction()
     {
         WKSigleton.Instance.PROVINSI = _Provinsi;
 
         ARModal ar = ARModal.Instance();
-        ar.ProvinsiAction(gameObject, _MateriProv);
+        ar.ProvinsiAction(gameObject);
 
         base.OnClickAction();
     }

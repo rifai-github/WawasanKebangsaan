@@ -13,23 +13,10 @@ public class ARState : FSMState
     public override void OnEnter()
     {
         WKStaticFunction.WKMessageLog("Enter ARState");
-        ARModal arModal = ARModal.Instance();
-        arModal.OpenModal();
+        ARModal ar = ARModal.Instance();
+        ar.OpenModal();
 
         base.OnEnter();
-    }
-
-    public void On3DAction()
-    {
-        WKStaticFunction.WKMessageLog("Close3D");        
-    }
-
-    public void PlayVideoAction()
-    {
-        WKStaticFunction.WKMessageLog("Play Video");
-
-        AppRuntime appRuntime = _FSMCaller as AppRuntime;
-        appRuntime.SetTransition(Transition.TRANSITION_TO_VIDEOTUTORIALSTATE);
     }
 
     public override void Update()
@@ -47,9 +34,8 @@ public class ARState : FSMState
     {
         WKStaticFunction.WKMessageLog("Leave ARState");
 
-        ARModal arModal = ARModal.Instance();
-        arModal.UnRegisterModal();
-        arModal.CloseModal();
+        ARModal ar = ARModal.Instance();
+        ar.CloseModal();
 
         base.OnLeave();
     }
