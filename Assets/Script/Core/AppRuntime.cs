@@ -5,8 +5,6 @@ using WawasanKebangsaanBase;
 
 public class AppRuntime : MonoBehaviour
 {
-    public GameObject _MatineeGameObject;
-
     protected FSMSystem _FSM;
 
     // Update is called once per frame  
@@ -26,7 +24,7 @@ public class AppRuntime : MonoBehaviour
             _FSM.PerformTransition(transition);
         else
         {
-            WKStaticFunction.WKMessageError("there is no fsm system in the app");
+            StaticFunction.WKMessageError("there is no fsm system in the app");
             MakeFSM();
         }
     }

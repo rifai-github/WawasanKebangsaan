@@ -12,7 +12,7 @@ public class ARState : FSMState
 
     public override void OnEnter()
     {
-        WKStaticFunction.WKMessageLog("Enter ARState");
+        StaticFunction.WKMessageLog("Enter ARState");
         ARModal ar = ARModal.Instance();
         ar.OpenModal();
 
@@ -32,7 +32,7 @@ public class ARState : FSMState
 
     public override void OnLeave()
     {
-        WKStaticFunction.WKMessageLog("Leave ARState");
+        StaticFunction.WKMessageLog("Leave ARState");
 
         ARModal ar = ARModal.Instance();
         ar.CloseModal();

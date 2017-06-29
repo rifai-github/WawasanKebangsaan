@@ -6,12 +6,15 @@ using UnityEngine.Events;
 
 namespace WawasanKebangsaanBase
 {
+    public class JSONEvent : UnityEvent<string>{}
+
     public struct CONTS_VAR
     {
         public static string OFFLINE_URL = "file://"+Application.persistentDataPath + "/";
-        public static string SERVER_URL = "http://rivayx.000webhostapp.com/WawasanKebangsaan/";
-        public static string OFFLINE_VIDEO = OFFLINE_URL + "video/";
-        public static string ONLINE_VIDEO = SERVER_URL + "video/";
+        public static string ONLINE_URL = "http://rivayx.000webhostapp.com/WawasanKebangsaan/";
+        public static string JSON_PATH = "JSONData/";
+        public static string VIDEO_PATH = "video/";
+        public static string LAMBANG_PATH = "lambang/";
     }
 
     public enum StateID 
@@ -69,7 +72,6 @@ namespace WawasanKebangsaanBase
         SumateraSelatan = 32,
         SumateraUtara = 33,
         SulawesiTenggara = 34
-
     }
 
     public enum VideoType
@@ -77,5 +79,11 @@ namespace WawasanKebangsaanBase
         Null = 0,
         VIDEO_TUTORIAL = 1,
         VIDEO_PROVINSI = 2
+    }
+
+    public enum TypeJSON
+    {
+        Null = 0,
+        JSON_PROVINSI = 1
     }
 }

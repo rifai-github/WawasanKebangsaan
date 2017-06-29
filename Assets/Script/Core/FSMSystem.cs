@@ -18,19 +18,19 @@ public abstract class FSMState
     {
         if (trans == Transition.NullTransition)
         {
-            WKStaticFunction.WKMessageError("The Transition is error");
+            StaticFunction.WKMessageError("The Transition is error");
             return;
         }
 
         if (id == StateID.NullStateID)
         {
-            WKStaticFunction.WKMessageError("The State is error");
+            StaticFunction.WKMessageError("The State is error");
             return;
         }
 
         if (map.ContainsKey(trans))
         {
-            WKStaticFunction.WKMessageError("The FSM already have this transition for state");
+            StaticFunction.WKMessageError("The FSM already have this transition for state");
             return;
         }
         map.Add(trans, id);
@@ -40,7 +40,7 @@ public abstract class FSMState
     {
         if (trans == Transition.NullTransition)
         {
-            WKStaticFunction.WKMessageError("The Transition is null, or not fully initialized");
+            StaticFunction.WKMessageError("The Transition is null, or not fully initialized");
             return;
         }
 
@@ -50,7 +50,7 @@ public abstract class FSMState
             return;
         }
 
-        WKStaticFunction.WKMessageLog("The Transition is not on the transition _Map");
+        StaticFunction.WKMessageLog("The Transition is not on the transition _Map");
     }
     
     public StateID GetOutputState(Transition trans)
@@ -96,7 +96,7 @@ public class FSMSystem
     {
         if (stateToAdd == null)
         {
-            WKStaticFunction.WKMessageError("there is no state to add");
+            StaticFunction.WKMessageError("there is no state to add");
         }
 
         stateToAdd.SetFSMCaller(caller);
@@ -114,7 +114,7 @@ public class FSMSystem
         {
             if (state.ID == stateToAdd.ID)
             {
-                WKStaticFunction.WKMessageError("state is already there");
+                StaticFunction.WKMessageError("state is already there");
                 return;
             }
         }
@@ -125,7 +125,7 @@ public class FSMSystem
     {
         if (stateID == StateID.NullStateID)
         {
-            WKStaticFunction.WKMessageError("the state id is null");
+            StaticFunction.WKMessageError("the state id is null");
             return;
         }
 
@@ -137,21 +137,21 @@ public class FSMSystem
                 return;
             }
         }
-        WKStaticFunction.WKMessageError("the state is not found in the fsm map");
+        StaticFunction.WKMessageError("the state is not found in the fsm map");
     }
 
     public void PerformTransition(Transition transition)
     {
         if (transition == Transition.NullTransition)
         {
-            WKStaticFunction.WKMessageError("the transition is null");
+            StaticFunction.WKMessageError("the transition is null");
             return;
         }
 
         StateID stateID = currentState.GetOutputState(transition);
         if (stateID == StateID.NullStateID)
         {
-            WKStaticFunction.WKMessageError("the state of transition is null ::" + currentState.ID.ToString() + transition.ToString());
+            StaticFunction.WKMessageError("the state of transition is null ::" + currentState.ID.ToString() + transition.ToString());
             return;
         }
 

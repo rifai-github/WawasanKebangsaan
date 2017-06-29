@@ -23,7 +23,7 @@ public class HomeModal : BaseModal
 
             if (_Instance == null)
             {
-                WKStaticFunction.WKMessageError("there is no HomeModal in the system");
+                StaticFunction.WKMessageError("there is no HomeModal in the system");
             }
         }
         return _Instance;
@@ -32,6 +32,11 @@ public class HomeModal : BaseModal
     public void OnRegisterModal(UnityAction OnStartAction)
     {
         _StartButton.onClick.AddListener(OnStartAction);
+    }
+
+    protected override void Tick(float deltaTime)
+    {
+        base.Tick(deltaTime);
     }
 
     public void UnRegisterModal()

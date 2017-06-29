@@ -12,7 +12,7 @@ public class VideoTutorialState : FSMState
 
     public override void OnEnter()
     {
-        WKStaticFunction.WKMessageLog("Enter ARState");
+        StaticFunction.WKMessageLog("Enter ARState");
         VideoTutorialModal videoModal = VideoTutorialModal.Instance();
         videoModal.OpenModal();
 
@@ -31,7 +31,7 @@ public class VideoTutorialState : FSMState
 
     public override void OnLeave()
     {
-        WKStaticFunction.WKMessageLog("Leave ARState");
+        StaticFunction.WKMessageLog("Leave ARState");
 
         VideoTutorialModal videoModal = VideoTutorialModal.Instance();
         videoModal.CloseModal();

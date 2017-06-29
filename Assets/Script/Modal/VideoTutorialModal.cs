@@ -15,7 +15,7 @@ public class VideoTutorialModal : BaseModal
 
             if (_Instance == null)
             {
-                WKStaticFunction.WKMessageError("there is no VideoTutorialModal in the system");
+                StaticFunction.WKMessageError("there is no VideoTutorialModal in the system");
             }
         }
         return _Instance;

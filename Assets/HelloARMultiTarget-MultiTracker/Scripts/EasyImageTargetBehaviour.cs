@@ -43,7 +43,7 @@ namespace EasyAR
 
         void OnTargetFound(ImageTargetBaseBehaviour behaviour)
         {
-            WKStaticFunction.WKMessageLog("Found : " + Target.Id);
+            StaticFunction.WKMessageLog("Found : " + Target.Id);
             ARModal ar = ARModal.Instance();
             ar.SetFoundMarker = true;
 
@@ -52,7 +52,7 @@ namespace EasyAR
 
         void OnTargetLost(ImageTargetBaseBehaviour behaviour)
         {
-            WKStaticFunction.WKMessageLog("Lost : " + Target.Id);
+            StaticFunction.WKMessageLog("Lost : " + Target.Id);
             ARModal ar = ARModal.Instance();
             ar.SetFoundMarker = false;
 
