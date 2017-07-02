@@ -12,7 +12,7 @@ public class ProvinsiClick : BaseCaller
     private string[] _VideoPath;
 
     public Provinsi GetProvinsi { get { return _Provinsi; } }
-    public string GetLambangPath;// { get { return _LambangPath; } set { _LambangPath = value; } }
+    public string GetLambangPath { get { return _LambangPath; } set { _LambangPath = value; } }
     public string[] GetSuku { get { return _Suku; } set { _Suku = value; } }
     public string[] GetVideoPath { get { return _VideoPath; } set { _VideoPath = value; } }
 
@@ -23,6 +23,7 @@ public class ProvinsiClick : BaseCaller
 
     protected override void OnClickAction()
     {
+        //Debug.Log(_VideoPath[0]);
         ARModal ar = ARModal.Instance();
         ar.ProvinsiAction(gameObject, _Provinsi);
 

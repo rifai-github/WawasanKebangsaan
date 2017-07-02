@@ -30,7 +30,6 @@ public class StaticFunction
 
         return url;
     }
-
     public static string JSONURL(string name)
     {
         string url = "";
@@ -41,7 +40,6 @@ public class StaticFunction
 
         return url;
     }
-
     public static string VideoURL(string name)
     {
         string url = "";
@@ -164,7 +162,6 @@ public class StaticFunction
 
         return id;
     }
-
     public static Provinsi GetEnumProvinsi(int id)
     {
         Provinsi prov = Provinsi.Null;
@@ -391,7 +388,6 @@ public class StaticFunction
 
         return name;
     }
-
     public static string GameObjectFullName(int id)
     {
         return id.ToString() + ": " + GetNameProvinsi(id);
@@ -400,7 +396,6 @@ public class StaticFunction
     {
         return GetIDProvinsi(prov).ToString() + ": " + GetNameProvinsi(prov);
     }
-
     public static GameObject Get3DProvinsi(int id)
     {
         return Get3DProvinsi(GetEnumProvinsi(id));

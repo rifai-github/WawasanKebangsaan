@@ -21,10 +21,14 @@ public class ARState : FSMState
 
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        ARModal ar = ARModal.Instance();
+        if (!ar.ShowProvinsi)
         {
-            AppRuntime appRuntime = _FSMCaller as AppRuntime;
-            appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                AppRuntime appRuntime = _FSMCaller as AppRuntime;
+                appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
+            }
         }
         
         base.Update();

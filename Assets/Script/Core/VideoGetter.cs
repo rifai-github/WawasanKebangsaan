@@ -20,7 +20,7 @@ public class VideoGetter : MonoBehaviour
         switch (type)
         {
             case VideoType.VIDEO_TUTORIAL:
-                StartCoroutine(PlayVideoCourotine("Video Tutorial.mp4"));
+                StartCoroutine(PlayVideoCourotine("video tutorial.mp4"));
                 break;
             default:
                 StaticFunction.WKMessageError("Wrong Call Method PlayVideo");
