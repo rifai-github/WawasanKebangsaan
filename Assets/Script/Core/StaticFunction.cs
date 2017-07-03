@@ -116,7 +116,7 @@ public class StaticFunction
             case Provinsi.Maluku:
                 id = 20;
                 break;
-            case Provinsi.KepulauanMaluku:
+            case Provinsi.MalukuUtara:
                 id = 21;
                 break;
             case Provinsi.NusaTenggaraBarat:
@@ -228,7 +228,7 @@ public class StaticFunction
                 prov = Provinsi.Maluku;
                 break;
             case 21:
-                prov = Provinsi.KepulauanMaluku;
+                prov = Provinsi.MalukuUtara;
                 break;
             case 22:
                 prov = Provinsi.NusaTenggaraBarat;
@@ -342,7 +342,7 @@ public class StaticFunction
             case Provinsi.Maluku:
                 name = "Maluku";
                 break;
-            case Provinsi.KepulauanMaluku:
+            case Provinsi.MalukuUtara:
                 name = "Kepulauan Maluku";
                 break;
             case Provinsi.NusaTenggaraBarat:
@@ -465,8 +465,8 @@ public class StaticFunction
             case Provinsi.Maluku:
                 go = Singleton.Instance.Get3DProvinsi._Maluku;
                 break;
-            case Provinsi.KepulauanMaluku:
-                go = Singleton.Instance.Get3DProvinsi._KepulauanMaluku;
+            case Provinsi.MalukuUtara:
+                go = Singleton.Instance.Get3DProvinsi._MalukuUtara;
                 break;
             case Provinsi.NusaTenggaraBarat:
                 go = Singleton.Instance.Get3DProvinsi._NusaTenggaraBarat;

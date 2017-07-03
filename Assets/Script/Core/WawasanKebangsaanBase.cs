@@ -58,7 +58,7 @@ namespace WawasanKebangsaanBase
         KepulauanRiau = 18,
         Lampung = 19,
         Maluku = 20,
-        KepulauanMaluku = 21,
+        MalukuUtara = 21,
         NusaTenggaraBarat = 22,
         NusaTenggaraTimur = 23,
         Papua = 24,

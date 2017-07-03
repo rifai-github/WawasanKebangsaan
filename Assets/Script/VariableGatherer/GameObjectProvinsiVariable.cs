@@ -24,7 +24,7 @@ public class GameObjectProvinsiVariable : BaseVariableGatherer
     public GameObject _KepulauanRiau;
     public GameObject _Lampung;
     public GameObject _Maluku;
-    public GameObject _KepulauanMaluku;
+    public GameObject _MalukuUtara;
     public GameObject _NusaTenggaraBarat;
     public GameObject _NusaTenggaraTimur;
     public GameObject _Papua;
