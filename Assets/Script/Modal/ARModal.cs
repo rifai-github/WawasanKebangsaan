@@ -93,7 +93,7 @@ public class ARModal : BaseModal
     }
 
     private void JSONAction(string jsonString)
-    {
+    {                           
         StaticFunction.WKMessageLog(jsonString);
 
         GetPrivinsiItemJSON baseJSON = new GetPrivinsiItemJSON(jsonString);
@@ -113,7 +113,7 @@ public class ARModal : BaseModal
     }
 
     private void CreateUIForDataProvinsi(ProvinsiItemClass itemClass)
-    {
+    { 
         GameObject item = Instantiate(_ProvinsiButton) as GameObject;
         item.transform.SetParent(_ProvinsiButtonPlaceHolder.transform);
         item.transform.localScale = Vector3.one;
@@ -136,12 +136,14 @@ public class ARModal : BaseModal
     }
         
     protected override void Tick(float deltaTime)
-    {
-        DetectObject();
-        ProvinsiView();
-        ShowHideButtonProvinsi();
+    {   if (ModalPanel.activeSelf)
+        {
+            DetectObject();
+            ProvinsiView();
+            ShowHideButtonProvinsi();
 
-        _BolaDunia.transform.Rotate(0, Time.deltaTime * 15, 0);
+            _BolaDunia.transform.Rotate(0, Time.deltaTime * 15, 0);
+        }
         base.Tick(deltaTime);
     }
 
@@ -167,7 +169,7 @@ public class ARModal : BaseModal
             _bButtonProvinsi = false;
             _Swipe.enabled = false;
             _3DAnimate.enabled = true;
-            
+
             _3DAnimate.SetBool("Dunia", false);
             _3DAnimate.SetBool("Peta", false);
 
@@ -182,6 +184,7 @@ public class ARModal : BaseModal
     {
         if (_bProvView)
         {
+            _LambangProv.gameObject.SetActive(true);
             _3DAnimate.enabled = false;
             _ProvinsiSelect.transform.position = _MarkerTransform.position;
             _ProvinsiSelect.transform.rotation = _MarkerTransform.rotation;
@@ -196,6 +199,8 @@ public class ARModal : BaseModal
         }
         else
         {
+            _LambangProv.gameObject.SetActive(false);
+            DestroySukuVideo();
             if (!_3DAnimate.enabled)
             {
                 _PetaIndonesia.position = Vector3.Lerp(_PetaIndonesia.position, _MarkerTransform.position, Time.deltaTime * 5);
@@ -224,31 +229,30 @@ public class ARModal : BaseModal
         _ProvinsiSelect = Instantiate(prov) as GameObject;
         _ProvinsiSelect.name = prov.name + " (ProvinsiSelected)";
         _ProvinsiSelect.transform.SetParent(_3dModal.transform);
-        //_ProvinsiSelect.transform.localScale = prov.transform.lossyScale;
-        string urlLambang = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetLambangPath;
-        //string[] suku = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetSuku;
-        //string[] video = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetVideoPath;
-        //Debug.Log("jalan " + _ProvinsiSelect.GetComponent<ProvinsiClick>().GetVideoPath[0]); // ini gak jalan
-        //StartCoroutine(CreateDynamicDataSelect(suku, video));
-
-        ImageGetter image = ImageGetter.GetImage();
-        image.StartGettingImage(_LambangProv, urlLambang);
 
         foreach (Component comp in _ProvinsiSelect.GetComponents<Component>())
         {
-            if (!(comp is Transform))
+            if (!(comp is Transform) && !(comp is ProvinsiClick))
             {
                 Destroy(comp);
             }
         }
+
+        string urlLambang = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetLambangPath;
+        string[] suku = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetSuku;
+        string[] video = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetVideoPath;                             
+        StartCoroutine(CreateDynamicDataSelect(suku, video));                 
+
+        ImageGetter image = ImageGetter.GetImage();
+        image.StartGettingImage(_LambangProv, urlLambang);
+
         _ProvinsiView = _ProvinsiSelect.transform.GetChild(0);
         _ProvinsiSelect.transform.localScale = _ProvinsiView.localScale;
     }
 
     private IEnumerator CreateDynamicDataSelect(string[] suku, string[] video)
     {
-        //DestroySukuVideo();
-
+        DestroySukuVideo();         
 
         for (int i = 0; i < suku.Length; i++)
         {
@@ -274,7 +278,7 @@ public class ARModal : BaseModal
             itemVideo.SetActive(true);
 
             itemVideo.GetComponent<VideoVariable>().GetVideoName.text = video[i];
-            itemVideo.GetComponent<PlayVideo>().SetVideoPath = StaticFunction.VideoURL(video[i]);
+            itemVideo.GetComponent<PlayVideo>().VideoName = video[i];
 
             _ItemVideoList.Add(itemVideo);
 
@@ -294,28 +298,10 @@ public class ARModal : BaseModal
         _3DAnimate.SetBool("Dunia", false);
 
     }
-
-    public void PlayVideo(Provinsi prov)
-    {
-        string videoProv = "";
-
-        switch (prov)
-        {
-            case Provinsi.JawaTengah:
-                videoProv = "pakar.mp4";
-                break;
-            case Provinsi.Papua:
-                videoProv = "Papua.mp4";
-                break;
-        }
-        //manggilnya pakai JSON        
-        VideoGetter video = VideoGetter.GetVideo();
-        video.PlayVideo(videoProv);
-    }
-
+                   
     private void PlayVideoAction()
     {
-        VideoGetter video = VideoGetter.GetVideo();
+        VideoGetter video = new VideoGetter();
         video.PlayVideo(VideoType.VIDEO_TUTORIAL);
     }
 
@@ -362,7 +348,7 @@ public class ARModal : BaseModal
     }
     
     public override void CloseModal()
-    {
+    {                                    
         DestroyButtonProvinsi();
         UnRegisterModal();
         _bMarkerDetect = false;

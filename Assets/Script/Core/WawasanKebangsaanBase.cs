@@ -10,7 +10,7 @@ namespace WawasanKebangsaanBase
 
     public struct CONTS_VAR
     {
-        public static string OFFLINE_URL = "file://"+Application.persistentDataPath + "/";
+        public static string OFFLINE_URL = "file:///"+Application.persistentDataPath + "/";
         public static string ONLINE_URL = "http://rivayx.000webhostapp.com/WawasanKebangsaan/";
         public static string JSON_PATH = "JSONData/";
         public static string VIDEO_PATH = "video/";

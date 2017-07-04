@@ -1,44 +1,10 @@
 fileFormatVersion: 2
 guid: dfcb1306b057d3f48a82e14215babd2f
-timeCreated: 1498751213
+timeCreated: 1499175540
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - _JawaBarat: {instanceID: 0}
-  - _JawaTengah: {instanceID: 0}
-  - _NanggroeAcehDarussalam: {instanceID: 0}
-  - _Bali: {instanceID: 0}
-  - _Banten: {instanceID: 0}
-  - _Bengkulu: {instanceID: 0}
-  - _Gorontalo: {instanceID: 0}
-  - _DKIJakarta: {instanceID: 0}
-  - _Jambi: {instanceID: 0}
-  - _JawaTimur: {instanceID: 0}
-  - _KalimantanBarat: {instanceID: 0}
-  - _KalimantanSelatan: {instanceID: 0}
-  - _KalimantanTengah: {instanceID: 0}
-  - _KalimantanTimur: {instanceID: 0}
-  - _KalimantanUtara: {instanceID: 0}
-  - _DIYogyakarta: {instanceID: 0}
-  - _BangkaBelitung: {instanceID: 0}
-  - _KepulauanRiau: {instanceID: 0}
-  - _Lampung: {instanceID: 0}
-  - _Maluku: {instanceID: 0}
-  - _KepulauanMaluku: {instanceID: 0}
-  - _NusaTenggaraBarat: {instanceID: 0}
-  - _NusaTenggaraTimur: {instanceID: 0}
-  - _Papua: {instanceID: 0}
-  - _PapuaBarat: {instanceID: 0}
-  - _Riau: {instanceID: 0}
-  - _SulawesiBarat: {instanceID: 0}
-  - _SulawesiSelatan: {instanceID: 0}
-  - _SulawesiTengah: {instanceID: 0}
-  - _SulawesiUtara: {instanceID: 0}
-  - _SumateraBarat: {instanceID: 0}
-  - _SumateraSelatan: {instanceID: 0}
-  - _SumateraUtara: {instanceID: 0}
-  - _SulawesiTenggara: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
