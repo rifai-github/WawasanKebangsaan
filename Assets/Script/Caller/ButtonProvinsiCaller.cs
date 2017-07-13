@@ -10,7 +10,6 @@ public class ButtonProvinsiCaller : BaseCaller
     
     public void onPress()
     {
-        ARModal ar = ARModal.Instance();
-        ar.ProvinsiAction(StaticFunction.Get3DProvinsi(idProvinsi), StaticFunction.GetEnumProvinsi(idProvinsi));
+        StaticFunction.Get3DProvinsi(idProvinsi).GetComponent<ProvinsiClick>().Selected = true;
     }
 }

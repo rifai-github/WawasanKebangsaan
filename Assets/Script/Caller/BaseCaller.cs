@@ -14,4 +14,12 @@ public class BaseCaller : MonoBehaviour
     {
 
     }
+    void Update()
+    {
+        OnUpdate();
+    }
+    protected virtual void OnUpdate()
+    {
+        
+    }
 }

@@ -42,14 +42,16 @@ public class ARModal : BaseModal
     [SerializeField]
     private GameObject _VideoPlaceHolder;
 
-    [SerializeField]
-    private Swipe _Swipe;
-    
-    private Vector3 _PetaStartScale;
+	[SerializeField]
+	private Swipe _Swipe;
+
+	private Vector3 _PetaStartScale;
 
     private GameObject _ProvinsiSelect;
     private Transform _ProvinsiView;
     private Animator _3DAnimate;
+    private GameObject _LastSelectProv;
+    private Transform _Object;
 
     private bool _bProvView;
     private bool _bButtonProvinsi;
@@ -82,6 +84,12 @@ public class ARModal : BaseModal
     public override void OpenModal()
     {
         base.OpenModal();
+
+        if (Singleton.Instance.MacBookMode)
+        {
+            _MarkerTransform.parent.GetComponent<EasyAR.EasyImageTargetBehaviour>().enabled = false;
+            _bMarkerDetect = true;
+        }
         
         OnRegisterModal();
         _PetaStartScale = _PetaIndonesia.lossyScale;
@@ -171,10 +179,13 @@ public class ARModal : BaseModal
             _3DAnimate.enabled = true;
 
             _3DAnimate.SetBool("Dunia", false);
-            _3DAnimate.SetBool("Peta", false);
+			_3DAnimate.SetBool("Peta", false);
 
             if (_ProvinsiSelect != null)
-            {
+			{
+                Destroy(_Object);
+				_LastSelectProv.GetComponent<Renderer>().material.color = Color.green;
+				_PetaIndonesia.transform.localScale = new Vector3(_PetaStartScale.x, _PetaStartScale.y, _PetaStartScale.z);
                 Destroy(_ProvinsiSelect, 1);
             }
         }
@@ -190,6 +201,14 @@ public class ARModal : BaseModal
             _ProvinsiSelect.transform.rotation = _MarkerTransform.rotation;
             _PetaIndonesia.position = Vector3.Lerp(_PetaIndonesia.position, _ProvinsiView.position, Time.deltaTime * 5);
             _PetaIndonesia.localScale = Vector3.Lerp(_PetaIndonesia.localScale, _ProvinsiView.localScale, Time.deltaTime * 5);
+            _Object.position = _MarkerTransform.position;
+            _Object.rotation = _MarkerTransform.rotation;
+
+            if(_Object != null)
+            {
+                _Object.localScale = Vector3.Lerp(_Object.localScale, Vector3.one, Time.deltaTime * 8);
+            }
+
             if (Input.GetKey(KeyCode.Escape))
             {
                 Destroy(_ProvinsiSelect, 1);
@@ -217,14 +236,21 @@ public class ARModal : BaseModal
             _PanelScroll.position = Vector2.Lerp(_PanelScroll.position, _HideButtonProvinsi.position, Time.deltaTime * 5);
     }
 
-    public void ProvinsiAction(GameObject prov, Provinsi provinsi)
+    public void ProvinsiAction(GameObject prov, Transform obj)
     {
         if (_ProvinsiSelect != null)
         {
+            _Object.localScale = Vector3.zero;
+            Destroy(_Object.gameObject);
+            _LastSelectProv.GetComponent<Renderer>().material.color = Color.green;
             Destroy(_ProvinsiSelect);
-        }        
-
+        }
+        _Object = Instantiate(obj);
+        _Object.SetParent(_3dModal.transform);
+        prov.GetComponent<Renderer>().material.color = Color.red;
+		_LastSelectProv = prov;
         _bProvView = true;
+        _bButtonProvinsi = false;
 
         _ProvinsiSelect = Instantiate(prov) as GameObject;
         _ProvinsiSelect.name = prov.name + " (ProvinsiSelected)";
@@ -291,7 +317,7 @@ public class ARModal : BaseModal
     {
         _3DAnimate.SetBool("Dunia", true);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         _3DAnimate.SetBool("Peta", true);
         yield return new WaitForSeconds(1f);
@@ -348,7 +374,7 @@ public class ARModal : BaseModal
     }
     
     public override void CloseModal()
-    {                                    
+    {
         DestroyButtonProvinsi();
         UnRegisterModal();
         _bMarkerDetect = false;
