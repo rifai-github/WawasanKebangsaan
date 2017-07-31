@@ -161,10 +161,9 @@ public class ARModal : BaseModal
         {
             _PanelScroll.gameObject.SetActive(true);
             _PetaIndonesia.gameObject.SetActive(true);
-            _Swipe.enabled = true;
 
-            _3dModal.transform.position = Vector3.Lerp(_3dModal.transform.position, _MarkerTransform.position, Time.deltaTime * 5);
-            _3dModal.transform.rotation = Quaternion.Lerp(_3dModal.transform.rotation, _MarkerTransform.rotation, Time.deltaTime * 5);
+            //_3dModal.transform.position = Vector3.Lerp(_3dModal.transform.position, _MarkerTransform.position, Time.deltaTime * 5);
+            //_3dModal.transform.rotation = Quaternion.Lerp(_3dModal.transform.rotation, _MarkerTransform.rotation, Time.deltaTime * 5);
 
             StartCoroutine(EnterAnimator());
 
@@ -177,16 +176,17 @@ public class ARModal : BaseModal
             _bButtonProvinsi = false;
             _Swipe.enabled = false;
             _3DAnimate.enabled = true;
-
+            _ShowHideProvinsiButton.interactable = false;
             _3DAnimate.SetBool("Dunia", false);
 			_3DAnimate.SetBool("Peta", false);
 
             if (_ProvinsiSelect != null)
 			{
-                Destroy(_Object);
+				_Object.localScale = Vector3.zero;
+				Destroy(_Object.gameObject);
+				Destroy(_ProvinsiSelect, 1);
 				_LastSelectProv.GetComponent<Renderer>().material.color = Color.green;
 				_PetaIndonesia.transform.localScale = new Vector3(_PetaStartScale.x, _PetaStartScale.y, _PetaStartScale.z);
-                Destroy(_ProvinsiSelect, 1);
             }
         }
     }
@@ -323,6 +323,9 @@ public class ARModal : BaseModal
         yield return new WaitForSeconds(1f);
         _3DAnimate.SetBool("Dunia", false);
 
+        _Swipe.enabled = true;
+        _ShowHideProvinsiButton.interactable = true;
+
     }
                    
     private void PlayVideoAction()
@@ -375,6 +378,9 @@ public class ARModal : BaseModal
     
     public override void CloseModal()
     {
+        if (_ItemButtonList != null)
+            _ItemButtonList.Clear();
+
         DestroyButtonProvinsi();
         UnRegisterModal();
         _bMarkerDetect = false;

@@ -24,10 +24,11 @@ public class ARState : FSMState
         ARModal ar = ARModal.Instance();
         if (!ar.ShowProvinsi)
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyUp(KeyCode.Escape))
             {
                 AppRuntime appRuntime = _FSMCaller as AppRuntime;
-                appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
+				appRuntime.SetTransition(Transition.TRANSITION_TO_HOMESTATE);
+				return;
             }
         }
         

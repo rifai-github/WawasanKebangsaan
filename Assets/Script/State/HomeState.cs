@@ -31,11 +31,6 @@ public class HomeState : FSMState
 
     public override void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         base.Update();
     }
 
