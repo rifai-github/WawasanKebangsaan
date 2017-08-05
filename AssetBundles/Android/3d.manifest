@@ -1,0 +1,151 @@
+ManifestFileVersion: 0
+CRC: 185792454
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 74600d9c2cc933b224e963eb9484592e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 60836a5b373dc529aac07b4c44053486
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+Assets:
+- Assets/3D/barong bali/Materials/Default Material_Flattened_Diffuse.mat
+- Assets/3D/keong mas/Materials/dbl_Group#15_001.mat
+- Assets/3D/keong mas/Materials/dbl_Group_005.mat
+- Assets/3D/keong mas/Materials/dbl_Group#14_001.mat
+- Assets/3D/keong mas/Materials/No Name.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_BARAT.mat
+- Assets/3D/keong mas/Materials/dbl_Group#24_001.mat
+- Assets/3D/keong mas/Materials/dbl_22_003.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/RIAU.mat
+- Assets/3D/keong mas/Materials/dbl_Group#15_003.mat
+- Assets/3D/keong mas/Materials/dbl_22_005.mat
+- Assets/3D/Rumah Jawa/texture/RumahAdatJawa_AO.png
+- Assets/3D/Peta Indonesia Revisi/Materials/DI_YOGYAKARTA.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_TIMUR.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_004.mat
+- Assets/3D/Peta Indonesia Revisi/peta indonesia revisi.fbx
+- Assets/3D/Borobudur/Materials/dbl_Component_006.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/LAMPUNG.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/PAPUA_BARAT.mat
+- Assets/3D/Borobudur/Materials/dbl_skp2575_001.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/BANGKA_BELITUNG.mat
+- Assets/3D/keong mas/Materials/dbl_22_004.mat
+- Assets/3D/barong bali/textures/lambert1_normal.jpg
+- Assets/3D/Rumah Jawa/texture/rumahadatjawa.png
+- Assets/3D/Borobudur/Materials/dbl_Component_007.mat
+- Assets/3D/Borobudur/borobudur.fbx
+- Assets/3D/Rumah Bambu/Materials/Wood_Lumber_ButtJoined.mat
+- Assets/3D/ObjectTransform.prefab
+- Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_TENGAH.mat
+- Assets/3D/keong mas/Materials/dbl_Group_001.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/JAMBI.mat
+- Assets/3D/keong mas/keongmas.fbx
+- Assets/3D/barong bali/textures/lambert1_AO.jpg
+- Assets/3D/barong bali/textures/Default Material_AO.jpg
+- Assets/3D/Kota Batu/kotabatu.fbx
+- Assets/3D/keong mas/Materials/dbl_Group#15_006.mat
+- Assets/3D/Rumah Bambu/Materials/Graphic2.mat
+- Assets/3D/Kota Batu/Materials/texture0.mat
+- Assets/3D/Rumah Bambu/rumahbambu.fbx
+- Assets/3D/Borobudur/Materials/dbl_Component_002.mat
+- Assets/3D/Kota Batu/Materials/texture1.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_009.mat
+- Assets/3D/Rumah Bambu/Materials/Graphic1.mat
+- Assets/3D/Rumah Jawa/texture/rumahadatjawa_S.png
+- Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_UTARA.mat
+- Assets/3D/barong bali/textures/lambert1_roughness.jpg
+- Assets/3D/keong mas/Materials/dbl_Group#15_002.mat
+- Assets/3D/keong mas/Materials/dbl_Group#13_001.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#2_003.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#2_002.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/NTT.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#6_001.mat
+- Assets/3D/barong bali/textures/Default Material_albedo.jpg
+- Assets/3D/Borobudur/Materials/No Name.mat
+- Assets/3D/barong bali/Materials/lambert1.mat
+- Assets/3D/barong bali/textures/lambert1_metallic.jpg
+- Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_SELATAN.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/BENGKULU.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_BARAT.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/NAD.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/NTB.mat
+- Assets/3D/Kota Batu/Materials/_auto_7.mat
+- Assets/3D/keong mas/Materials/dbl_Group_002.mat
+- Assets/3D/keong mas/Materials/dbl_22_006.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#8_001.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#5_001.mat
+- Assets/3D/keong mas/Materials/dbl_22_001.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/JAWA_TENGAH.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_BARAT.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/MALUKU.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/DKI_JAKARTA.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_001.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/GORONTALO.mat
+- Assets/3D/keong mas/Materials/dbl_Group#15_005.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/PAPUA_IRIAN_JAYA.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/LUAR_NEGERI.mat
+- Assets/3D/Rumah Jawa/Materials/Ornamen.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_SELATAN.mat
+- Assets/3D/keong mas/Materials/dbl_Group_004.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/KEPULAUAN_RIAU.mat
+- Assets/3D/Kota Batu/Materials/texture4.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/BANTEN.mat
+- Assets/3D/keong mas/Materials/dbl_Group_003.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_010.mat
+- Assets/3D/Borobudur/Materials/dbl_skp2575_002.mat
+- Assets/3D/keong mas/Materials/dbl_22_008.mat
+- Assets/3D/keong mas/Materials/dbl_22_007.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_TENGGARA.mat
+- Assets/3D/keong mas/Materials/dbl_Group#15_004.mat
+- Assets/3D/keong mas/Materials/dbl_22_002.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#23_001.mat
+- Assets/3D/Kota Batu/Materials/texture3.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_SELATAN.mat
+- Assets/3D/Object.prefab
+- Assets/3D/Peta Indonesia Revisi/Materials/MALUKU_UTARA.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_008.mat
+- Assets/3D/barong bali/barong.fbx
+- Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_TENGAH.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_005.mat
+- Assets/3D/Rumah Jawa/rumahjawa.fbx
+- Assets/3D/Peta Indonesia Revisi/Materials/JAWA_TIMUR.mat
+- Assets/3D/Rumah Jawa/Materials/jawa.mat
+- Assets/3D/Rumah Jawa/texture/rumahadatjawa_N.png
+- Assets/3D/Borobudur/Materials/dbl_Component#6_002.mat
+- Assets/3D/keong mas/Materials/dbl_Group#24_002.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#22_001.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/JAWA_BARAT.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_UTARA.mat
+- Assets/3D/Peta Indonesia Revisi/Materials/BALI.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#2_001.mat
+- Assets/3D/barong bali/textures/lambert1_albedo.jpg
+- Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_UTARA.mat
+- Assets/3D/Borobudur/Materials/dbl_Component_003.mat
+- Assets/3D/Rumah Bambu/Materials/skp_front_default.mat
+- Assets/3D/Rumah Bambu/Materials/Metal_Seamed.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#6_003.mat
+- Assets/3D/Borobudur/Materials/dbl_skp2575_003.mat
+- Assets/3D/Borobudur/Materials/dbl_Component#6_004.mat
+- Assets/3D/Kota Batu/Materials/texture6.mat
+- Assets/3D/Kota Batu/Materials/texture5.mat
+Dependencies: []

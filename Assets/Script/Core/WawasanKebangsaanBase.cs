@@ -12,6 +12,7 @@ namespace WawasanKebangsaanBase
     {
         public static string OFFLINE_URL = "file:///"+Application.persistentDataPath + "/";
         public static string ONLINE_URL = "http://rivayx.000webhostapp.com/WawasanKebangsaan/";
+        public static string ASSETBUNDLE_PATH = "AssetsBundle/";
         public static string JSON_PATH = "JSONData/";
         public static string VIDEO_PATH = "video/";
         public static string LAMBANG_PATH = "lambang/";
@@ -85,5 +86,21 @@ namespace WawasanKebangsaanBase
     {
         Null = 0,
         JSON_PROVINSI = 1
+	}
+
+	public enum EAssetsBundle
+	{
+		NULL = 0,
+		AssetsBundle3D = 1
+	}
+    public enum E3DType
+    {
+        NULL = 0,
+        BARONG = 1,
+        BOROBUDUR = 2,
+        KOTA_BATU = 3,
+        RUMAH_BAMBU = 4,
+        KEONG_MAS = 5,
+        RUMAH_JAWA = 6
     }
 }

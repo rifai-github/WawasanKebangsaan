@@ -1,10 +1,27 @@
 fileFormatVersion: 2
 guid: e0e69230b98fb0e49a2bab2ae476893d
-timeCreated: 1495251181
+timeCreated: 1501933117
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ModalPanel: {fileID: 1048635547686146, guid: 77e92f252845c46e785bd59f0aff1805,
+      type: 2}
+  - _StartButton: {fileID: 114474920287938120, guid: 4c20914c4b08040e6a0b5f9ec4226cd1,
+      type: 2}
+  - _InfoButton: {fileID: 114165001052402218, guid: 85512f05bf65741968e538fc59a3da0c,
+      type: 2}
+  - _PanelInfo: {fileID: 224390916183485034, guid: 720e3aea1a7e344d280491de23742c10,
+      type: 2}
+  - _ExitConfirm: {fileID: 224946527244662322, guid: 82c444089070e4a1aa24f97075bd9118,
+      type: 2}
+  - _BackgroundPopup: {instanceID: 0}
+  - _ExitPopupInfo: {fileID: 114568777989238146, guid: bb3eb0106552f4d8ab2e81b1f8124d3e,
+      type: 2}
+  - _ExitPopupConfirm: {fileID: 114918646244699324, guid: 6698517496bca4c818fc14fa0826d1a0,
+      type: 2}
+  - _YesButton: {fileID: 114157126696575666, guid: a8475c07da7b542cbaa70e3e54ed2119,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -510,4 +510,33 @@ public class StaticFunction
         }
         return go;
     }
+
+    public static string URLAssetBundle(EAssetsBundle bundle)
+    {
+        string url = CONTS_VAR.ONLINE_URL + CONTS_VAR.ASSETBUNDLE_PATH;
+
+        switch (bundle)
+        {
+            case EAssetsBundle.AssetsBundle3D:
+                url += "3d";
+                break;
+        }
+
+        return url;
+    }
+
+    public static string Path3DFormAssetBundle(E3DType name3D)
+    {
+        string path = "";
+
+        switch (name3D)
+        {
+            case E3DType.BARONG:
+                path = "Assets/3D/barong bali/barong.fbx";
+                break;
+        }
+
+        return path;
+    }
+
 }

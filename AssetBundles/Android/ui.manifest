@@ -1,0 +1,82 @@
+ManifestFileVersion: 0
+CRC: 1307124307
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d6e76143fb2c4371601acfef82a8480b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4774d6da9b606debf00b5a5d61c4487c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00022.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00030.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00014.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00002.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00042.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00047.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00026.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00035.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00005.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00052.png
+- Assets/Resources/UI/Home/btn_cancel.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00019.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00029.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00017.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00050.png
+- Assets/Resources/UI/Home/img_background.png
+- Assets/Resources/UI/Home/btn_info.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00021.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00018.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00016.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00008.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00049.png
+- Assets/Resources/UI/Home/img_quit.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00037.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00031.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00039.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00007.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00013.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00011.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00051.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00027.png
+- Assets/Resources/UI/Home/btn_mulai.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00043.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00045.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00040.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00025.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00006.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00053.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00048.png
+- Assets/Resources/UI/Home/img_awan.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00023.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00034.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00041.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00015.png
+- Assets/Resources/UI/AR/img_frame.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00001.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00046.png
+- Assets/Resources/UI/Home/img_lndsp.png
+- Assets/Resources/UI/Home/btn_oke.png
+- Assets/Resources/UI/Home/img_balon.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00028.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00012.png
+- Assets/Resources/UI/Home/img_info.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00032.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00010.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00009.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00003.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00024.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00044.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00033.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00020.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00000.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00038.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00004.png
+- Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00036.png
+Dependencies: []
