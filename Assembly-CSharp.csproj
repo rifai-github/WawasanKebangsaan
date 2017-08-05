@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetBundleManager\AssetBundleLoadOperation.cs" />
+     <Compile Include="Assets\AssetBundleManager\AssetBundleManager.cs" />
+     <Compile Include="Assets\AssetBundleManager\Utility.cs" />
      <Compile Include="Assets\EasyAR\Scripts\ARBuilder.cs" />
      <Compile Include="Assets\EasyAR\Scripts\AugmenterBehaviour.cs" />
      <Compile Include="Assets\EasyAR\Scripts\BarCodeScannerBehaviour.cs" />
@@ -65,12 +68,14 @@
      <Compile Include="Assets\Script\Caller\ProvinsiClick.cs" />
      <Compile Include="Assets\Script\Core\AppRuntime.cs" />
      <Compile Include="Assets\Script\Core\BaseModal.cs" />
+     <Compile Include="Assets\Script\Core\DownloaderAssetBundle.cs" />
      <Compile Include="Assets\Script\Core\FSMSystem.cs" />
      <Compile Include="Assets\Script\Core\ImageGetter.cs" />
      <Compile Include="Assets\Script\Core\ItemClass.cs" />
      <Compile Include="Assets\Script\Core\JSONData.cs" />
      <Compile Include="Assets\Script\Core\JSONGetter.cs" />
      <Compile Include="Assets\Script\Core\JSONParsing.cs" />
+     <Compile Include="Assets\Script\Core\LoadAssetBundle.cs" />
      <Compile Include="Assets\Script\Core\Singleton.cs" />
      <Compile Include="Assets\Script\Core\StaticFunction.cs" />
      <Compile Include="Assets\Script\Core\Swipe.cs" />

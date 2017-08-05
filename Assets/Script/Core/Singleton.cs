@@ -13,6 +13,7 @@ public class Singleton : MonoBehaviour
     [SerializeField]
     private GameObjectProvinsiVariable _3DProvinsi;
 
+    public AssetBundle assetsBundle { get; set; }
     public bool OnlineMode { get { return _bOnlineMode; } }
     public bool MacBookMode { get { return _bMacBookMode; } }
     public GameObjectProvinsiVariable Get3DProvinsi { get { return _3DProvinsi; } }
@@ -36,18 +37,6 @@ public class Singleton : MonoBehaviour
         {
             Destroy(gameObject);
         }
-//#if UNITY_EDITOR
-//        if (_bMacBookMode)
-//        {
-//            Destroy(_ARCamera);
-//        }
-//        else
-//        {
-//            Destroy(_Camera);
-//		}
-//#elif UNITY_ANDROID
-//		Destroy(_Camera);
-//#endif
 
         if (_bMacBookMode)
         {

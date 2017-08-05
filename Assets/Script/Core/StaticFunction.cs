@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using WawasanKebangsaanBase;
 using System;
 using System.Collections;
@@ -510,4 +510,19 @@ public class StaticFunction
         }
         return go;
     }
+
+    public static string Path3DFormAssetBundle(E3DType name3D)
+    {
+        string path = "";
+
+        switch (name3D)
+        {
+            case E3DType.BARONG:
+                path = "Assets/3D/barong bali/barong.fbx";
+                break;
+        }
+
+        return path;
+    }
+
 }

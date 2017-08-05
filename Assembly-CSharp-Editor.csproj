@@ -46,6 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AssetBundleManager\Editor\AssetbundlesMenuItems.cs" />
+     <Compile Include="Assets\AssetBundleManager\Editor\BuildScript.cs" />
+     <Compile Include="Assets\AssetBundleManager\Editor\ExecuteInternalMono.cs" />
+     <Compile Include="Assets\AssetBundleManager\Editor\LaunchAssetBundleServer.cs" />
      <Compile Include="Assets\EasyAR\Scripts\Editor\PostBuild.cs" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
      <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
