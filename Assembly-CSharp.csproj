@@ -83,7 +83,6 @@
      <Compile Include="Assets\Script\Core\WawasanKebangsaanBase.cs" />
      <Compile Include="Assets\Script\Modal\ARModal.cs" />
      <Compile Include="Assets\Script\Modal\HomeModal.cs" />
-     <Compile Include="Assets\Script\Modal\VideoTutorialModal.cs" />
      <Compile Include="Assets\Script\Plugins\SimpleJSON.cs" />
      <Compile Include="Assets\Script\State\ARState.cs" />
      <Compile Include="Assets\Script\State\HomeState.cs" />
@@ -94,6 +93,7 @@
      <Compile Include="Assets\Script\VariableGatherer\ProvinsiButtonVariable.cs" />
      <Compile Include="Assets\Script\VariableGatherer\ProvinsiItemVariable.cs" />
      <Compile Include="Assets\Script\VariableGatherer\VideoVariable.cs" />
+     <Compile Include="Assets\coba.cs" />
      <None Include="Assets\Plugins\LeanTouch\Examples\Fonts\OFL.txt" />
      <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Plugins\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
