@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 236520770
+CRC: 4136615780
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 28b908f444d9ed6e7f6f5640116689fc
+    Hash: bcbbcd17189228c6737eb91916f18326
   TypeTreeHash:
     serializedVersion: 2
     Hash: 05072adba197009fd646c080f71aea7a
@@ -30,9 +30,11 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
+- Assets/Resources/Marker/coverMarker.png
 - Assets/3D/barong bali/Materials/Default Material_Flattened_Diffuse.mat
 - Assets/3D/keong mas/Materials/dbl_Group#15_001.mat
 - Assets/3D/keong mas/Materials/dbl_Group_005.mat
+- Assets/Resources/lambang/kalimantan selatan.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00022.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00030.png
 - Assets/3D/keong mas/Materials/dbl_Group#14_001.mat
@@ -48,23 +50,33 @@ Assets:
 - Assets/3D/Peta Indonesia Revisi/Materials/RIAU.mat
 - Assets/3D/keong mas/Materials/dbl_Group#15_003.mat
 - Assets/3D/keong mas/Materials/dbl_22_005.mat
+- Assets/Resources/lambang/kalimantan utara.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00035.png
 - Assets/3D/Rumah Jawa/texture/RumahAdatJawa_AO.png
 - Assets/3D/Peta Indonesia Revisi/Materials/DI_YOGYAKARTA.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00005.png
+- Assets/Resources/lambang/ntt.png
 - Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_TIMUR.mat
+- Assets/Resources/UI/Home/btn_cancel.png
+- Assets/Resources/lambang/jawa tengah.png
+- Assets/Resources/lambang/jawa barat.png
 - Assets/3D/Borobudur/Materials/dbl_Component_004.mat
+- Assets/Resources/lambang/sumatera barat.png
 - Assets/3D/Peta Indonesia Revisi/peta indonesia revisi.fbx
 - Assets/3D/Borobudur/Materials/dbl_Component_006.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/LAMPUNG.mat
+- Assets/Resources/lambang/kepulauan riau.png
 - Assets/3D/Peta Indonesia Revisi/Materials/PAPUA_BARAT.mat
 - Assets/3D/Borobudur/Materials/dbl_skp2575_001.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00052.png
+- Assets/Resources/lambang/bengkulu.png
 - Assets/3D/Peta Indonesia Revisi/Materials/BANGKA_BELITUNG.mat
 - Assets/3D/keong mas/Materials/dbl_22_004.mat
 - Assets/3D/barong bali/textures/lambert1_normal.jpg
+- Assets/Resources/icon.png
 - Assets/3D/Rumah Jawa/texture/rumahadatjawa.png
 - Assets/3D/Borobudur/Materials/dbl_Component_007.mat
+- Assets/Resources/btn_cancel.png
 - Assets/3D/Borobudur/borobudur.fbx
 - Assets/3D/Rumah Bambu/Materials/Wood_Lumber_ButtJoined.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00019.png
@@ -72,16 +84,18 @@ Assets:
 - Assets/3D/ObjectTransform.prefab
 - Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_TENGAH.mat
 - Assets/3D/keong mas/Materials/dbl_Group_001.mat
+- Assets/Resources/lambang/riau.png
 - Assets/3D/Peta Indonesia Revisi/Materials/JAMBI.mat
 - Assets/3D/keong mas/keongmas.fbx
 - Assets/3D/barong bali/textures/lambert1_AO.jpg
 - Assets/3D/barong bali/textures/Default Material_AO.jpg
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00017.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00050.png
+- Assets/Resources/lambang/sulawesi tenggara.png
 - Assets/3D/Kota Batu/kotabatu.fbx
 - Assets/3D/keong mas/Materials/dbl_Group#15_006.mat
 - Assets/3D/Rumah Bambu/Materials/Graphic2.mat
-- Assets/Resources/UI/Home/img_background_menu.png
+- Assets/Resources/UI/Home/img_background.png
 - Assets/Resources/UI/Home/btn_info.png
 - Assets/3D/Kota Batu/Materials/texture0.mat
 - Assets/3D/Rumah Bambu/rumah bambu-jabar.fbx
@@ -93,12 +107,15 @@ Assets:
 - Assets/3D/Rumah Bambu/Materials/Graphic1.mat
 - Assets/3D/Rumah Jawa/texture/rumahadatjawa_S.png
 - Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_UTARA.mat
+- Assets/Resources/lambang/maluku.png
 - Assets/3D/barong bali/textures/lambert1_roughness.jpg
 - Assets/3D/keong mas/Materials/dbl_Group#15_002.mat
+- Assets/Resources/2k_earth_daymap.jpg
 - Assets/3D/keong mas/Materials/dbl_Group#13_001.mat
 - Assets/3D/Borobudur/Materials/dbl_Component#2_003.mat
 - Assets/3D/Borobudur/Materials/dbl_Component#2_002.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/NTT.mat
+- Assets/Resources/lambang/sulawesi barat.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00016.png
 - Assets/3D/Borobudur/Materials/dbl_Component#6_001.mat
 - Assets/3D/barong bali/textures/Default Material_albedo.jpg
@@ -107,20 +124,26 @@ Assets:
 - Assets/3D/barong bali/Materials/lambert1.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00049.png
 - Assets/3D/barong bali/textures/lambert1_metallic.jpg
+- Assets/Resources/lambang/kalimantan timur.png
 - Assets/Resources/UI/Home/img_quit.png
 - Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_SELATAN.mat
+- Assets/Resources/lambang/aceh.png
 - Assets/3D/Peta Indonesia Revisi/Materials/BENGKULU.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_BARAT.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/NAD.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00037.png
+- Assets/Resources/lambang/kalimantan barat.png
 - Assets/3D/Peta Indonesia Revisi/Materials/NTB.mat
 - Assets/3D/Kota Batu/Materials/_auto_7.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00031.png
 - Assets/3D/keong mas/Materials/dbl_Group_002.mat
 - Assets/3D/keong mas/Materials/dbl_22_006.mat
+- Assets/Resources/Marker/indomaret.png
 - Assets/3D/Borobudur/Materials/dbl_Component#8_001.mat
+- Assets/Resources/lambang/papua.png
 - Assets/3D/Borobudur/Materials/dbl_Component#5_001.mat
 - Assets/3D/keong mas/Materials/dbl_22_001.mat
+- Assets/Resources/lambang/sulawesi utara.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00039.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00007.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00013.png
@@ -129,6 +152,7 @@ Assets:
 - Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_BARAT.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00051.png
 - Assets/3D/Peta Indonesia Revisi/Materials/MALUKU.mat
+- Assets/Resources/lambang/banten.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00027.png
 - Assets/3D/Peta Indonesia Revisi/Materials/DKI_JAKARTA.mat
 - Assets/3D/Borobudur/Materials/dbl_Component_001.mat
@@ -136,14 +160,19 @@ Assets:
 - Assets/Resources/UI/Home/btn_mulai.png
 - Assets/3D/keong mas/Materials/dbl_Group#15_005.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/PAPUA_IRIAN_JAYA.mat
+- Assets/Resources/lambang/kalimantan tengah.png
+- Assets/Resources/lambang/jambi.png
 - Assets/3D/Peta Indonesia Revisi/Materials/LUAR_NEGERI.mat
+- Assets/Resources/lambang/maluku utara.png
 - Assets/3D/Rumah Jawa/Materials/Ornamen.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_SELATAN.mat
 - Assets/3D/keong mas/Materials/dbl_Group_004.mat
 - Assets/3D/Peta Indonesia Revisi/Materials/KEPULAUAN_RIAU.mat
 - Assets/3D/Kota Batu/Materials/texture4.mat
+- Assets/Resources/lambang/sulawesi tengah.png
 - Assets/3D/Peta Indonesia Revisi/Materials/BANTEN.mat
 - Assets/3D/keong mas/Materials/dbl_Group_003.mat
+- Assets/Resources/lambang/jawa timur.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00043.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00045.png
 - Assets/3D/Borobudur/Materials/dbl_Component_010.mat
@@ -153,16 +182,21 @@ Assets:
 - Assets/3D/keong mas/Materials/dbl_22_007.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00025.png
 - Assets/3D/Peta Indonesia Revisi/Materials/SULAWESI_TENGGARA.mat
+- Assets/Resources/lambang/diy.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00006.png
 - Assets/3D/keong mas/Materials/dbl_Group#15_004.mat
 - Assets/3D/keong mas/Materials/dbl_22_002.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00053.png
+- Assets/Resources/lambang/jakarta.png
 - Assets/3D/Borobudur/Materials/dbl_Component#23_001.mat
 - Assets/3D/Kota Batu/Materials/texture3.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00048.png
+- Assets/Resources/lambang/sumatera selatan.png
+- Assets/Resources/img_name.png
 - Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_SELATAN.mat
 - Assets/Resources/UI/Home/img_awan.png
 - Assets/3D/Object.prefab
+- Assets/Resources/lambang/bali.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00023.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00034.png
 - Assets/3D/Peta Indonesia Revisi/Materials/MALUKU_UTARA.mat
@@ -173,9 +207,11 @@ Assets:
 - Assets/Resources/UI/AR/img_frame.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00001.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00046.png
-- Assets/Resources/UI/Home/img_lndsp_menu.png
+- Assets/Resources/UI/Home/img_lndsp.png
 - Assets/Resources/UI/Home/btn_oke.png
 - Assets/Resources/UI/Home/img_balon.png
+- Assets/Resources/lambang/lampung.png
+- Assets/Resources/lambang/sulawesi selatan.png
 - Assets/3D/Peta Indonesia Revisi/Materials/KALIMANTAN_TENGAH.mat
 - Assets/3D/Borobudur/Materials/dbl_Component_005.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00028.png
@@ -188,6 +224,7 @@ Assets:
 - Assets/3D/Borobudur/Materials/dbl_Component#6_002.mat
 - Assets/3D/keong mas/Materials/dbl_Group#24_002.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00032.png
+- Assets/Resources/lambang/bangka belitung.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00010.png
 - Assets/3D/Borobudur/Materials/dbl_Component#22_001.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00009.png
@@ -200,11 +237,16 @@ Assets:
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00024.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00044.png
 - Assets/3D/Peta Indonesia Revisi/Materials/SUMATERA_UTARA.mat
+- Assets/Resources/img_splash.png
+- Assets/Resources/lambang/gorontalo.png
 - Assets/3D/Borobudur/Materials/dbl_Component_003.mat
 - Assets/3D/Rumah Bambu/Materials/skp_front_default.mat
+- Assets/Resources/lambang/ntb.png
 - Assets/3D/Rumah Bambu/Materials/Metal_Seamed.mat
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00033.png
+- Assets/Resources/lambang/papua barat.png
 - Assets/3D/Borobudur/Materials/dbl_Component#6_003.mat
+- Assets/Resources/lambang/sumatera utara.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00020.png
 - Assets/Resources/UI/Home/SequenceHome (30fps)/sekolah_00000.png
 - Assets/3D/Borobudur/Materials/dbl_skp2575_003.mat

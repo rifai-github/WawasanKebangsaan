@@ -45,6 +45,9 @@ public class ARModal : BaseModal
 	[SerializeField]
 	private Swipe _Swipe;
 
+    [SerializeField]
+    private Image _Frame;
+
 	private Vector3 _PetaStartScale;
 
     private GameObject _ProvinsiSelect;
@@ -80,6 +83,15 @@ public class ARModal : BaseModal
         }
         return _Instance;
     }
+
+
+    protected override void LoadAssets()
+    {
+        base.LoadAssets();
+
+		_Frame.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.FRAME_AR)) as Texture2D);
+
+	}
 
     public override void OpenModal()
     {
@@ -136,7 +148,7 @@ public class ARModal : BaseModal
         provinsiCaller.setIDProvinsi = itemClass.GetID;
         ProvinsiVariable.GetText.text = StaticFunction.GetNameProvinsi(itemClass.GetID);
 
-        provinsi.GetLambangPath = StaticFunction.LambangURL(itemClass.GetLambang);
+        provinsi.GetLambangPath = itemClass.GetLambang;
         provinsi.GetSuku = itemClass.GetSuku;
         provinsi.GetVideoPath = itemClass.GetVideo;
         
@@ -267,10 +279,13 @@ public class ARModal : BaseModal
         string urlLambang = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetLambangPath;
         string[] suku = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetSuku;
         string[] video = _ProvinsiSelect.GetComponent<ProvinsiClick>().GetVideoPath;                             
-        StartCoroutine(CreateDynamicDataSelect(suku, video));                 
+        StartCoroutine(CreateDynamicDataSelect(suku, video));
+        Debug.Log(urlLambang);
+		_LambangProv.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(urlLambang) as Texture2D);
 
-        ImageGetter image = ImageGetter.GetImage();
-        image.StartGettingImage(_LambangProv, urlLambang);
+
+		//ImageGetter image = ImageGetter.GetImage();
+        //image.StartGettingImage(_LambangProv, urlLambang);
 
         _ProvinsiView = _ProvinsiSelect.transform.GetChild(0);
         _ProvinsiSelect.transform.localScale = _ProvinsiView.localScale;
@@ -317,7 +332,7 @@ public class ARModal : BaseModal
     {
         _3DAnimate.SetBool("Dunia", true);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(13f);
 
         _3DAnimate.SetBool("Peta", true);
         yield return new WaitForSeconds(1f);

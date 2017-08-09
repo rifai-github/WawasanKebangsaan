@@ -1,15 +1,7 @@
 ManifestFileVersion: 0
-<<<<<<< HEAD
-CRC: 2956453353
+CRC: 799157404
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: assetsbundle
-=======
-CRC: 243340346
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: ui
->>>>>>> e9537cc32f2651e1ab3963902af90e290689b5bf
       Dependencies: {}

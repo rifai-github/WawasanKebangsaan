@@ -27,7 +27,8 @@ public class ImageGetter : MonoBehaviour
         
         if (_URLLink.error == null)
         {
-            image.sprite = Sprite.Create(_URLLink.texture, new Rect(0, 0, _URLLink.texture.width, _URLLink.texture.height), new Vector2(0.5f, 0.5f));
+            //image.sprite = Sprite.Create(_URLLink.texture, new Rect(0, 0, _URLLink.texture.width, _URLLink.texture.height), new Vector2(0.5f, 0.5f));
+            image.sprite = StaticFunction.TextureToSprite(_URLLink.texture);
             Destroy(this.gameObject);
         }
         else

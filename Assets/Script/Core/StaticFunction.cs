@@ -511,16 +511,155 @@ public class StaticFunction
         return go;
     }
 
-    public static string Path3DFormAssetBundle(E3DType name3D)
+    public static Sprite TextureToSprite(Texture2D tex)
+    {
+        return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+    }
+
+    public static string PathSpriteFormAssetBundle(eSpriteName nameSprite)
+    {
+        string path = "";
+
+        switch (nameSprite)
+		{
+			case eSpriteName.SQUENCE:
+				path = "sekolah_";
+				break;
+			case eSpriteName.BALON:
+				path = "img_balon";
+				break;
+			case eSpriteName.LANDSCAPE:
+				path = "img_lndsp";
+				break;
+            case eSpriteName.AWAN:
+                path = "img_awan";
+                break;
+            case eSpriteName.LANGIT:
+				path = "img_background";
+				break;
+            case eSpriteName.POPUP_EXIT:
+                path = "img_quit";
+                break;
+            case eSpriteName.POPUP_INFO:
+                path = "img_info";
+                break;
+            case eSpriteName.FRAME_AR:
+                path = "img_frame";
+                break;
+        }
+
+        return path;
+    }
+
+    public static string Path3DFormAssetBundle(Provinsi name3D)
     {
         string path = "";
 
         switch (name3D)
-        {
-            case E3DType.BARONG:
-                path = "Assets/3D/barong bali/barong.fbx";
-                break;
-        }
+		{
+			case Provinsi.JawaBarat:
+				path = "rumah bambu-jabar";
+				break;
+			case Provinsi.JawaTengah:
+				path = "Rumah_AdatJawa";
+				break;
+			case Provinsi.NanggroeAcehDarussalam:
+				path = "";
+				break;
+			case Provinsi.Bali:
+				path = "fullmdel";
+				break;
+			case Provinsi.Banten:
+				path = "";
+				break;
+			case Provinsi.Bengkulu:
+				path = "";
+				break;
+			case Provinsi.Gorontalo:
+				path = "";
+				break;
+			case Provinsi.DKIJakarta:
+				path = "keongmas";
+				break;
+			case Provinsi.Jambi:
+				path = "";
+				break;
+			case Provinsi.JawaTimur:
+				path = "kotabatu";
+				break;
+			case Provinsi.KalimantanBarat:
+				path = "";
+				break;
+			case Provinsi.KalimantanSelatan:
+				path = "";
+				break;
+			case Provinsi.KalimantanTengah:
+				path = "";
+				break;
+			case Provinsi.KalimantanTimur:
+				path = "";
+				break;
+			case Provinsi.KalimantanUtara:
+				path = "";
+				break;
+			case Provinsi.DIYogyakarta:
+				path = "borobudur";
+				break;
+			case Provinsi.BangkaBelitung:
+				path = "";
+				break;
+			case Provinsi.KepulauanRiau:
+				path = "";
+				break;
+			case Provinsi.Lampung:
+				path = "";
+				break;
+			case Provinsi.Maluku:
+				path = "";
+				break;
+			case Provinsi.MalukuUtara:
+				path = "";
+				break;
+			case Provinsi.NusaTenggaraBarat:
+				path = "";
+				break;
+			case Provinsi.NusaTenggaraTimur:
+				path = "";
+				break;
+			case Provinsi.Papua:
+				path = "";
+				break;
+			case Provinsi.PapuaBarat:
+				path = "";
+				break;
+			case Provinsi.Riau:
+				path = "";
+				break;
+			case Provinsi.SulawesiBarat:
+				path = "";
+				break;
+			case Provinsi.SulawesiSelatan:
+				path = "";
+				break;
+			case Provinsi.SulawesiTengah:
+				path = "";
+				break;
+			case Provinsi.SulawesiUtara:
+				path = "";
+				break;
+			case Provinsi.SumateraBarat:
+				path = "";
+				break;
+			case Provinsi.SumateraSelatan:
+				path = "";
+				break;
+			case Provinsi.SumateraUtara:
+				path = "";
+				break;
+			case Provinsi.SulawesiTenggara:
+				path = "";
+				break;
+		}
 
         return path;
     }

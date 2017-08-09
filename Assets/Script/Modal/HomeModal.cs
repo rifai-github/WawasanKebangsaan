@@ -9,6 +9,10 @@ using System.IO;
 public class HomeModal : BaseModal 
 {
     [SerializeField]
+	private RectTransform _Title;
+	[SerializeField]
+	private RectTransform _TitlePosition;
+    [SerializeField]
     private Button _StartButton;
     [SerializeField]
 	private Button _InfoButton;
@@ -23,7 +27,17 @@ public class HomeModal : BaseModal
     [SerializeField]
     private Button _ExitPopupConfirm;
     [SerializeField]
-    private Button _YesButton;
+	private Button _YesButton;
+	[SerializeField]
+	private Image _SequenceImage;
+	[SerializeField]
+	private Image _Landscape;
+    [SerializeField]
+	private Image _Sky;
+	[SerializeField]
+	private Image _Balon;
+	[SerializeField]
+	private List<Image> _Awan;
 
 	private bool _bShowInfoPanel;
     private bool _bShowExitConfirm;
@@ -45,11 +59,40 @@ public class HomeModal : BaseModal
         return _Instance;
     }
 
+    protected override void LoadAssets()
+    {
+        foreach (Image awan in _Awan)
+        {
+            awan.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.AWAN)) as Texture2D);
+        }
+		_Sky.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.LANGIT)) as Texture2D);
+		_Balon.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.BALON)) as Texture2D);
+		_Landscape.sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.LANDSCAPE)) as Texture2D);
+		_PanelInfo.GetComponent<Image>().sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.POPUP_INFO)) as Texture2D);
+		_ExitConfirm.GetComponent<Image>().sprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.PathSpriteFormAssetBundle(eSpriteName.POPUP_EXIT)) as Texture2D);
+        StartCoroutine(LoopSquence());
+        base.LoadAssets();
+    }
+
     public override void OpenModal()
 	{
+		base.OpenModal();
+        _Title.position = new Vector3(_Title.position.x, 1200, _Title.position.z);
         _ColorPopup = new Color(0, 0, 0, 0.8f);
         DefaultMode();
-        base.OpenModal();
+    }
+
+    private IEnumerator LoopSquence()
+    {
+        coba:
+        for (int i = 0; i <= 53; i++)
+        {
+            string pathImage = StaticFunction.PathSpriteFormAssetBundle(eSpriteName.SQUENCE) + i.ToString("D5");
+            Sprite newSprite = StaticFunction.TextureToSprite(Singleton.Instance.assetsBundle.LoadAsset(pathImage) as Texture2D);
+            _SequenceImage.sprite = newSprite;
+            yield return new WaitForSeconds(1 / 30f);
+        }
+        goto coba;
     }
 
     private void ShowInfoPanel()
@@ -91,8 +134,11 @@ public class HomeModal : BaseModal
     }
 
     protected override void Tick(float deltaTime)
-    {
+	{
+		
         base.Tick(deltaTime);
+
+        _Title.position = Vector3.Lerp(_Title.position, _TitlePosition.position, Time.deltaTime * 5F);
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {

@@ -13,6 +13,16 @@ public abstract class BaseModal : MonoBehaviour
         CloseModal();
     }
 
+    private void Start()
+    {
+        LoadAssets();
+    }
+
+    protected virtual void LoadAssets()
+    {
+        
+    }
+
     void Update()
     {
         Tick(Time.deltaTime);

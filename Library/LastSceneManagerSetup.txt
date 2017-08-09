@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/WawasanKebangsaan.unity
+- path: Assets/Scene/coba.unity
   isLoaded: 1
   isActive: 1

@@ -15,9 +15,9 @@ public class LoadAssetBundle : MonoBehaviour
 		return assetBundle;
 	}
 
-    public void Get3D(E3DType name)//, GameObject go)
+    public void Get3D(e3DName name)//, GameObject go)
 	{
-		GameObject obj = Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.Path3DFormAssetBundle(name)) as GameObject;
+		//GameObject obj = Singleton.Instance.assetsBundle.LoadAsset(StaticFunction.Path3DFormAssetBundle(name)) as GameObject;
         //obj.transform.chi
     }
 }

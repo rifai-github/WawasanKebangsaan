@@ -5,8 +5,43 @@ using WawasanKebangsaanBase;
 
 public class ARRuntime : AppRuntime
 {
+
+    [SerializeField]
+    private bool _bMacBookMode;
+    [SerializeField]
+    private GameObject _Camera;
+    [SerializeField]
+    private GameObject _ARCamera;
+    [SerializeField]
+    private GameObjectProvinsiVariable _3DProvinsi;
+
+    private void Awake()
+    {
+        Singleton.Instance.Get3DProvinsi = _3DProvinsi;
+        Singleton.Instance.MacBookMode = _bMacBookMode;
+    }
+
     void Start()
     {
+
+#if UNITY_EDITOR
+
+		Singleton.Instance.MacBookMode = _bMacBookMode;
+
+        if (_bMacBookMode)
+        {
+            Destroy(_ARCamera);
+        }
+        else
+        {
+            Destroy(_Camera);
+        }
+#elif UNITY_ANDROID
+
+        Singleton.Instance.MacBookMode = false;
+        Destroy(_Camera);
+#endif
+
         MakeFSM();
     }
 
