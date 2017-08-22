@@ -317,7 +317,7 @@ public class ARModal : BaseModal
     {
         _3DAnimate.SetBool("Dunia", true);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(13f);
 
         _3DAnimate.SetBool("Peta", true);
         yield return new WaitForSeconds(1f);

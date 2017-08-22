@@ -15,9 +15,15 @@ public class HomeModal : BaseModal
 	[SerializeField]
 	private Transform _PanelInfo;
     [SerializeField]
-    private Transform _ExitConfirm;
-    [SerializeField]
+	private Transform _ExitConfirm;
+	[SerializeField]
 	private Image _BackgroundPopup;
+	[SerializeField]
+	private Transform _Name;
+	[SerializeField]
+	private Transform _FormName;
+	[SerializeField]
+	private Transform _ToName;
     [SerializeField]
     private Button _ExitPopupInfo;
     [SerializeField]
@@ -49,7 +55,8 @@ public class HomeModal : BaseModal
 	{
         _ColorPopup = new Color(0, 0, 0, 0.8f);
         DefaultMode();
-        base.OpenModal();
+		base.OpenModal();
+		_Name.position = _FormName.position;
     }
 
     private void ShowInfoPanel()
@@ -93,6 +100,8 @@ public class HomeModal : BaseModal
     protected override void Tick(float deltaTime)
     {
         base.Tick(deltaTime);
+
+        _Name.position = Vector3.Lerp(_Name.position, _ToName.position, Time.deltaTime * 5);
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
