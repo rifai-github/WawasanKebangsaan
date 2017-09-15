@@ -5,8 +5,35 @@ using WawasanKebangsaanBase;
 
 public class ARRuntime : AppRuntime
 {
+	[SerializeField]
+	private bool _bNoCamera;
+	[SerializeField]
+	private GameObject _Camera;
+	[SerializeField]
+	private GameObject _ARCamera;
+	[SerializeField]
+	private GameObjectProvinsiVariable _3DProvinsi;
+
     void Start()
-    {
+	{
+
+#if DEBUG
+#else
+        _bNoCamera = false;
+#endif
+
+		Singleton.Instance.NoCameraMode = _bNoCamera;
+		Singleton.Instance.Get3DProvinsi = _3DProvinsi;
+
+		if (_bNoCamera)
+		{
+			Destroy(_ARCamera);
+		}
+		else
+		{
+			Destroy(_Camera);
+		}
+
         MakeFSM();
     }
 

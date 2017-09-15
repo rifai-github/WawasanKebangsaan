@@ -4,18 +4,15 @@ public class Singleton : MonoBehaviour
 {
     [SerializeField]
     private bool _bOnlineMode;
-    [SerializeField]
-    private bool _bMacBookMode;
-    [SerializeField]
-    private GameObject _Camera;
-    [SerializeField]
-    private GameObject _ARCamera;
-    [SerializeField]
-    private GameObjectProvinsiVariable _3DProvinsi;
+    private bool _bNoCamera;
+
+	private GameObject _Camera;
+	private GameObject _ARCamera;
+	private GameObjectProvinsiVariable _3DProvinsi;
 
     public bool OnlineMode { get { return _bOnlineMode; } }
-    public bool MacBookMode { get { return _bMacBookMode; } }
-    public GameObjectProvinsiVariable Get3DProvinsi { get { return _3DProvinsi; } }
+    public bool NoCameraMode { get { return _bNoCamera; } set { _bNoCamera = value; } }
+    public GameObjectProvinsiVariable Get3DProvinsi { get { return _3DProvinsi; } set { _3DProvinsi = value; }}
 
     public static Singleton Instance { get; private set; }
 
@@ -35,27 +32,6 @@ public class Singleton : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-//#if UNITY_EDITOR
-//        if (_bMacBookMode)
-//        {
-//            Destroy(_ARCamera);
-//        }
-//        else
-//        {
-//            Destroy(_Camera);
-//		}
-//#elif UNITY_ANDROID
-//		Destroy(_Camera);
-//#endif
-
-        if (_bMacBookMode)
-        {
-            Destroy(_ARCamera);
-        }
-        else
-        {
-            Destroy(_Camera);
         }
 	}
 }

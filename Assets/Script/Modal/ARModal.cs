@@ -85,7 +85,7 @@ public class ARModal : BaseModal
     {
         base.OpenModal();
 
-        if (Singleton.Instance.MacBookMode)
+        if (Singleton.Instance.NoCameraMode)
         {
             _MarkerTransform.parent.GetComponent<EasyAR.EasyImageTargetBehaviour>().enabled = false;
             _bMarkerDetect = true;
